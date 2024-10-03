@@ -1,0 +1,94 @@
+{% extends "general/layout.html" %}
+
+{% block head_title %}Pagina de busqueda{% endblock %}
+{% block h1_title %}Bienvenido a la pagina de Busqueda{% endblock %} 
+
+{% block page_content %}
+    <p> Contenido de la pagina de Busqueda</p>
+    {% comment %} <form action="" method="get">
+        <h2> Busca Autores, Libros y Editoriales </h2>
+        <div>
+            <label for="">Introduce cualquier cadena de texto</label>
+            <input type="text" name="q" required>
+            <button>Buscar</button>
+        </div>
+        {% if request.GET %}
+            <div>
+            <h3> Resultado </h3>
+                {% if editoriales %}
+                    <h4> Editoriales: </h4>
+                    <ul> 
+                        {% for editorial in editoriales %}
+                            <li>{{ editorial.nombre }} </li>               
+                        {% endfor %}
+                    </ul> 
+                {% else%}   
+                    <p> No existen Editoriales con los criterios de busqueda </p>
+                {% endif %}
+                {% if  autores %}
+                    <h4> Autores: </h4>
+                    <ul> 
+                        {% for autor in autores %}
+                            <li>{{ autor.nombre }} </li>               
+                        {% endfor %}
+                    </ul>
+                {% else %}
+                <p> No existen Autores con los criterios de busqueda </p>
+                {% endif %}
+                
+                {% if  libros %}
+                    <h4> Libros: </h4>
+                    <ul> 
+                        {% for libro in libros %}
+                            <li>{{ libro.titulo }} </li>               
+                        {% endfor %}
+                    </ul>
+                {% else %}
+                    <p> No existen Libros con los criterios de busqueda </p>
+                {% endif %}
+            {% endif %}
+    </form> {% endcomment %}
+    <div>
+        <form action="" method="get">
+        {{ formulario.as_p }}
+        <button>Enviar</button>
+        </form>
+        {% comment %} Ha partir de aqui pedimos si esta en Request {% endcomment %}
+        {% if request.GET %}
+            <div>
+            <h3> Resultado </h3>
+                {% if editoriales %}
+                    <h4> Editoriales: </h4>
+                    <ul> 
+                        {% for editorial in editoriales %}
+                            <li><a href={% url 'books:editorial_detail' editorial.id %}>{{ editorial.nombre }} </a> </li>               
+                        {% endfor %}
+                    </ul> 
+                {% else%}   
+                    <p> No existen Editoriales con los criterios de busqueda </p>
+                {% endif %}
+                {% if  autores %}
+                    <h4> Autores: </h4>
+                    <ul> 
+                        {% for autor in autores %}
+                            <li><a href={% url 'books:autor_detail' autor.id %}>{{ autor.nombre }} </a></li>               
+                        {% endfor %}
+                    </ul>
+                {% else %}
+                <p> No existen Autores con los criterios de busqueda </p>
+                {% endif %}
+                
+                {% if  libros %}
+                    <h4> Libros: </h4>
+                    <ul> 
+                        {% for libro in libros %}
+                            <li><a href={% url 'books:libro_detail' libro.id %}>{{ libro.titulo }} </a></li>               
+                        {% endfor %}
+                    </ul>
+                {% else %}
+                    <p> No existen Libros con los criterios de busqueda </p>
+                {% endif %}
+            </div>                
+        {% endif %}
+        
+{% endblock %}

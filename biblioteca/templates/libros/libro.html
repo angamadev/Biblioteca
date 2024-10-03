@@ -1,0 +1,15 @@
+{% extends "general/layout.html" %}
+
+{% block head_title %}Pagina de Libro{% endblock %}
+
+{% block h1_title %}Pagina de Libros{% endblock %} 
+
+{% block page_content %}
+    <h2> Lista completa de libros</h2>
+    <ul>
+        {% for libro in libros %}
+            <li> <a href={% url 'books:libro_detail' libro.id %}> {{ libro.titulo }} </a></li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}

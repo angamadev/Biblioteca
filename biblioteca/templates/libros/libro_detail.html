@@ -1,0 +1,17 @@
+{% extends "general/layout.html" %}
+
+{% block head_title %}Detalle de Libros{% endblock %}
+
+{% block h1_title %}Detalle de Libros{% endblock %} 
+
+{% block page_content %}
+    {% if libro %}
+        <h2> Titulo: {{libro.titulo}}</h2>
+        <p>Numero isbn: {{ libro.isbn }} </p>
+        <p> La fecha de publicacion: {{libro.fecha_publicacion}} </p>
+        <p>Volver a la <a href={% url 'books:libro_list' %}> lista de Libros</a></p>
+    {% else %}
+        <h2> No se ha encontrado la editorial que buscabas</h2>
+        <p>puedes probar de nuevo en la <a href={% url 'books:libro_list' %}> lista de Libros</a></p>
+    {% endif %}
+{% endblock %}

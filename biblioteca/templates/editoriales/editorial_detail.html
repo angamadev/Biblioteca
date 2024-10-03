@@ -1,0 +1,19 @@
+{% extends "general/layout.html" %}
+
+{% block head_title %}Detalle de Editoriales{% endblock %}
+
+{% block h1_title %}Detalle de Editoriales{% endblock %} 
+
+{% block page_content %}
+    {% if editorial %}
+        <h2> Nombre de la editorial: {{editorial.nombre}}</h2>
+        <p>Sitio web de la Editorial: {{ editorial.sitio_web }} </p>
+        <p> La fecha de Fundacion de la editorial: {{editorial.fecha_fundacion}} </p>
+        <p>Volver a la 
+            <a href={% url 'books:editorial_list' %}> lista de Editoriales</a> 
+        </p>
+    {% else %}
+        <h2> No se ha encontrado la editorial que buscabas</h2>
+        <p>puedes probar de nuevo en la <a href={% url 'books:editorial_list' %}> lista de Editoriales</a></p>
+    {% endif %}
+{% endblock %}

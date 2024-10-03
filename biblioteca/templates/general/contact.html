@@ -1,0 +1,32 @@
+{% extends "general/layout.html" %}
+
+{% block head_title %}Pagina de contacto{% endblock %}
+
+{% block h1_title %}Pagina de contacto{% endblock %} 
+
+{% block page_content %}
+<form action="" method="POST">
+    {% csrf_token %}
+    {{ formulario.as_p }}
+    <button>Enviar</button>
+</form>
+
+{% comment %} El formulario a continuacion es la forma simple {% endcomment %}
+    {% comment %} <form action="" method="POST">
+        {% csrf_token %}
+        <div>
+            <label for="nombre">Nombre</label>
+            <input type="text=" id="nombre" name="nombre" required>
+        </div>
+        <div>
+            <label for="email">Email</label>
+            <input type="email=" id="email" name="email" required>
+        </div>
+        <div>
+            <label for="comentario">Comentario</label>
+            <textarea id="comentario" name="comentario" required></textarea>
+        </div>
+        <button>Enviar</button>
+    </form>    {% endcomment %}
+    <p> Escribenos a <a href="mailto:conquerblocks@conquer.com">conquerblocks@conquer.com </a> </p>
+{% endblock %}
