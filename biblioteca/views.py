@@ -27,7 +27,6 @@ def contact_view(request):
             context = {
                 "formulario" : formulario,
             }
-
             return render(request,'general/contact.html', context)
         
     formulario = ContactForm()
@@ -56,7 +55,7 @@ def search_view(request):
     else:
         formulario = SearchForm()
         
-    context = {
+    context = { 
         "formulario" : formulario
     }
     return render(request, 'general/search.html', context)

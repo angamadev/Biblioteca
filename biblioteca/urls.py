@@ -24,7 +24,7 @@ from .views import home_view,contact_view,search_view
 urlpatterns = [
     path("", home_view, name='home'),
     path('', include('books.urls', namespace='books')),
-    path("contacto", contact_view, name='contacto'),
+    path("contact", contact_view, name='contacto'),
     path('admin/', admin.site.urls),
     path("buscar/", search_view, name='search'),
 ] + debug_toolbar_urls()
