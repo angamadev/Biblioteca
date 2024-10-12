@@ -19,12 +19,12 @@ from django.contrib import admin
 from django.urls import path
 from django.urls import include, path
 from debug_toolbar.toolbar import debug_toolbar_urls # type: ignore
-from .views import home_view,contact_view,search_view
+from .views import home_view,search_view,ContactUsFormView,SearchFormView
 
 urlpatterns = [
     path("", home_view, name='home'),
     path('', include('books.urls', namespace='books')),
-    path("contact", contact_view, name='contacto'),
+    path("contact", ContactUsFormView.as_view(), name='contacto'),
     path('admin/', admin.site.urls),
     path("buscar/", search_view, name='search'),
 ] + debug_toolbar_urls()

@@ -3,10 +3,12 @@ from django.urls import path
 from .views import (
     editoriales_view,
     editorial_detail,
+    editorial_create,
     libros_view,
     libro_detail,
     autores_view,
     autor_detail,
+    
 )
 
 app_name = "books"
@@ -18,4 +20,5 @@ urlpatterns = [
     path("autores/<int:id>/", autor_detail, name="autor_detail"),
     path("editoriales/", editoriales_view, name='editorial_list'),
     path("editoriales/<int:id>/", editorial_detail, name="editorial_detail"),
+    path("editoriales/create/", editorial_create, name="editorial_create"),
 ]

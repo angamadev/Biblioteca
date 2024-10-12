@@ -21,8 +21,8 @@ class ContactForm(forms.Form):
     
     def clean_nombre(self):
         nombre = self.cleaned_data["nombre"]
-        if len(nombre) < 2:
-            raise forms.ValidationError("El nombre debe tener al menos 2 caracteres")
+        if len(nombre) < 5:
+            raise forms.ValidationError("El nombre debe tener al menos 5 caracteres")
         return nombre
     
     

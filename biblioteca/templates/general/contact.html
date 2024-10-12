@@ -5,11 +5,17 @@
 {% block h1_title %}Pagina de contacto{% endblock %} 
 
 {% block page_content %}
-<form action="" method="POST">
-    {% csrf_token %}
-    {{ formulario.as_p }}
-    <button>Enviar</button>
-</form>
+
+    {% if success %}
+    <h2> Formulario enviado correctamente, Gracias </h2>
+    {% else %}
+        <form action="" method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button>Enviar</button>
+        </form>       
+    {% endif %}
+
 
 {% comment %} El formulario a continuacion es la forma simple {% endcomment %}
     {% comment %} <form action="" method="POST">

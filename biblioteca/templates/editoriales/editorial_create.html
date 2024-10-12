@@ -1,0 +1,21 @@
+{% extends "general/layout.html" %}
+
+{% block head_title %}Creacion de Editorial{% endblock %}
+
+{% block h1_title %}Nueva Editorial{% endblock %} 
+
+{% block page_content %}
+    {% comment %} {% if request.POST %}
+        <p> {{ new_editorial }}
+    {% else %} {% endcomment %}
+        <h2> Datos de la Editorial</h2>
+
+        <form action="" method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button>Crear Editorial</button>
+        </form> 
+    {% comment %} {% endif %}       {% endcomment %}
+
+
+{% endblock %}
