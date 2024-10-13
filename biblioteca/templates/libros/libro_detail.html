@@ -5,13 +5,18 @@
 {% block h1_title %}Detalle de Libros{% endblock %} 
 
 {% block page_content %}
-    {% if libro %}
-        <h2> Titulo: {{libro.titulo}}</h2>
-        <p>Numero isbn: {{ libro.isbn }} </p>
-        <p> La fecha de publicacion: {{libro.fecha_publicacion}} </p>
-        <p>Volver a la <a href={% url 'books:libro_list' %}> lista de Libros</a></p>
-    {% else %}
-        <h2> No se ha encontrado la editorial que buscabas</h2>
-        <p>puedes probar de nuevo en la <a href={% url 'books:libro_list' %}> lista de Libros</a></p>
-    {% endif %}
+    <article id="{{ libros.pk }}">
+        {% if libros %}
+            <h2> Titulo: {{ libros.titulo }}</h2>
+            <p>Numero isbn: {{ libros.isbn }} </p>
+            <p> La fecha de publicacion: {{libros.fecha_publicacion}} </p>
+            <p>Volver a la <a href={% url 'books:libro_list' %}> lista de Libros</a></p>
+        {% else %}
+            <h2> No se ha encontrado el libro que buscabas</h2>
+        {% endif %}
+        <button> <a href={% url "books:libro_update"  libros.pk %}>Editar Libro</a></button>
+        <button> <a href={% url "books:libro_delete"  libros.pk %}>Borrar Libro</a></button>
+
+    </article>
+
 {% endblock %}

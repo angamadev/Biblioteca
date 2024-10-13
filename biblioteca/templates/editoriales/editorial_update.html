@@ -1,0 +1,16 @@
+{% extends "general/layout.html" %}
+
+{% block head_title %}Actualizar Editorial{% endblock %}
+
+{% block h1_title %}Actualizar Editorial{% endblock %} 
+
+{% block page_content %}
+        <h2> Datos del Libro {{ editorial.id }}</h2>
+
+        <form action="" method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button>Actualizar</button>
+        </form> 
+
+{% endblock %}

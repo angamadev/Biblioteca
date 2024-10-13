@@ -1,16 +1,16 @@
 {% extends "general/layout.html" %}
 
-{% block head_title %}Creacion de Editorial{% endblock %}
+{% block head_title %}Creacion de Libro{% endblock %}
 
-{% block h1_title %}Nueva Editorial{% endblock %} 
+{% block h1_title %}Nueva Libro{% endblock %} 
 
 {% block page_content %}
-        <h2> Datos de la Editorial</h2>
+        <h2> Datos del Libro</h2>
 
         <form action="" method="POST">
             {% csrf_token %}
             {{ form.as_p }}
-            <button>Crear Editorial</button>
+            <button>Crear Libro</button>
         </form> 
 
 {% endblock %}

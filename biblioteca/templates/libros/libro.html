@@ -5,10 +5,14 @@
 {% block h1_title %}Pagina de Libros{% endblock %} 
 
 {% block page_content %}
+    <ul>
+        <li> <a href={% url "books:libro_create" %}>Añadir nueva Libro</a></li>
+    </ul>
+
     <h2> Lista completa de libros</h2>
     <ul>
         {% for libro in libros %}
-            <li> <a href={% url 'books:libro_detail' libro.id %}> {{ libro.titulo }} </a></li>
+            <li> <a href={% url 'books:libro_detail' libro.pk %}> {{ libro.titulo }} </a></li>
         {% endfor %}
     </ul>
 

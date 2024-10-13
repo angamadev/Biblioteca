@@ -1,0 +1,16 @@
+{% extends "general/layout.html" %}
+
+{% block head_title %}Borrar Libro{% endblock %}
+
+{% block h1_title %}Borrar Libro{% endblock %} 
+
+{% block page_content %}
+        <h2> Deseas borrar {{ object.titulo }}?</h2>
+
+        <form action="" method="POST">
+            {% csrf_token %}
+            {{ form }}
+            <button>Eliminar</button>
+        </form> 
+
+{% endblock %}

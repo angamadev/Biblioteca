@@ -1,16 +1,16 @@
 {% extends "general/layout.html" %}
 
-{% block head_title %}Creacion de Editorial{% endblock %}
+{% block head_title %}Modificar Autor{% endblock %}
 
-{% block h1_title %}Nueva Editorial{% endblock %} 
+{% block h1_title %}Modificar Autor{% endblock %} 
 
 {% block page_content %}
-        <h2> Datos de la Editorial</h2>
+        <h2> Datos del Autor {{ autor.id }}</h2>
 
         <form action="" method="POST">
             {% csrf_token %}
             {{ form.as_p }}
-            <button>Crear Editorial</button>
+            <button>Actualizar</button>
         </form> 
 
 {% endblock %}

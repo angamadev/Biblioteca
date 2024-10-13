@@ -5,14 +5,22 @@
 {% block h1_title %}Detalle de Autores{% endblock %} 
 
 {% block page_content %}
-    {% if autor %}
-            <h2> Nombre del autor: {{autor.nombre}}</h2>
-            <p>Id del Autor: {{ autor.id }} </p>
-            <p> La fecha de nacimiento: {{autor.f_nac}} </p>
 
-            <p>Volver a la <a href={% url 'books:autor_list' %}> lista de autores</a></p>
-            {% else %}
-        <h2> No se ha encontrado el Autor que buscabas</h2>
-        <p>puedes probar de nuevo en la <a href={% url 'books:autor_list' %}> lista de autores</a></p>
-    {% endif %}
+    <article id="{{ autores.pk }}">
+
+        {% if autores %}
+                <h2> Nombre del autor: {{autores.nombre}}</h2>
+                <p>Id del Autor: {{ autores.id }} </p>
+                <p> La fecha de nacimiento: {{autores.f_nac}} </p>
+
+                <p>Volver a la <a href={% url 'books:autor_list' %}> lista de autores</a></p>
+                {% else %}
+            <h2> No se ha encontrado el Autor que buscabas</h2>
+            <p>puedes probar de nuevo en la <a href={% url 'books:autor_list' %}> lista de autores</a></p>
+        {% endif %}
+        <button> <a href={% url "books:autor_update"  autores.pk %}>Editar Autor</a></button>
+        <button> <a href={% url "books:autor_delete"  autores.pk %}>Borrar Autor</a></button>
+
+    </article>
+
 {% endblock %}
