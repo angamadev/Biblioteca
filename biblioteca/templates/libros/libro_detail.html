@@ -10,12 +10,12 @@
             <h2> Titulo: {{ libros.titulo }}</h2>
             <p>Numero isbn: {{ libros.isbn }} </p>
             <p> La fecha de publicacion: {{libros.fecha_publicacion}} </p>
-            <p>Volver a la <a href={% url 'books:libro_list' %}> lista de Libros</a></p>
+            <p>Volver a la <a href={% url 'libro:list' %}> lista de Libros</a></p>
         {% else %}
             <h2> No se ha encontrado el libro que buscabas</h2>
         {% endif %}
-        <button> <a href={% url "books:libro_update"  libros.pk %}>Editar Libro</a></button>
-        <button> <a href={% url "books:libro_delete"  libros.pk %}>Borrar Libro</a></button>
+        <button> <a href={% url "libro:update"  libros.pk %}>Editar Libro</a></button>
+        <button> <a href={% url "libro:delete"  libros.pk %}>Borrar Libro</a></button>
 
     </article>
 

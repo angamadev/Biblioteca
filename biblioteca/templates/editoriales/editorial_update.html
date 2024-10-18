@@ -11,6 +11,7 @@
             {% csrf_token %}
             {{ form.as_p }}
             <button>Actualizar</button>
+            <button><a href={% url 'editorial:detail' object.pk %}>Cancelar</a></button>
         </form> 
 
 {% endblock %}

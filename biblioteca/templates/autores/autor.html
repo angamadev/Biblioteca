@@ -7,13 +7,13 @@
 {% block page_content %}
 
     <ul>
-        <li> <a href={% url "books:autor_create" %}>Añadir nuevo Autor</a></li>
+        <li> <a href={% url "autor:create" %}>Añadir nuevo Autor</a></li>
     </ul>
 
     <h2> Los autores son :</h2>
     <ul>
         {% for autor in autores %}
-            <li> <a href={% url 'books:autor_detail' autor.pk %}> {{ autor.nombre }} </a></li>
+            <li> <a href={% url 'autor:detail' autor.pk %}> {{ autor.nombre }} </a></li>
         {% endfor %}
     </ul>
 {% endblock %}

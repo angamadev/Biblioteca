@@ -61,7 +61,7 @@
                     <h4> Editoriales: </h4>
                     <ul> 
                         {% for editorial in editoriales %}
-                            <li><a href={% url 'books:editorial_detail' editorial.id %}>{{ editorial.nombre }} </a> </li>               
+                            <li><a href={% url 'editorial:detail' editorial.id %}>{{ editorial.nombre }} </a> </li>               
                         {% endfor %}
                     </ul> 
                 {% else%}   
@@ -71,7 +71,7 @@
                     <h4> Autores: </h4>
                     <ul> 
                         {% for autor in autores %}
-                            <li><a href={% url 'books:autor_detail' autor.id %}>{{ autor.nombre }} </a></li>               
+                            <li><a href={% url 'autor:detail' autor.id %}>{{ autor.nombre }} </a></li>               
                         {% endfor %}
                     </ul>
                 {% else %}
@@ -82,7 +82,7 @@
                     <h4> Libros: </h4>
                     <ul> 
                         {% for libro in libros %}
-                            <li><a href={% url 'books:libro_detail' libro.id %}>{{ libro.titulo }} </a></li>               
+                            <li><a href={% url 'libro:detail' libro.id %}>{{ libro.titulo }} </a></li>               
                         {% endfor %}
                     </ul>
                 {% else %}

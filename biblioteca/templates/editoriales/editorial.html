@@ -6,13 +6,13 @@
 
 {% block page_content %}
     <ul>
-        <li> <a href={% url "books:editorial_create" %}>Añadir nueva Editorial</a></li>
+        <li> <a href={% url "editorial:create" %}>Añadir nueva Editorial</a></li>
     </ul>
 
     <h3> Lista completa de Editoriales</h3>
     <ul>
         {% for editorial in editoriales %}
-            <li> <a href={% url 'books:editorial_detail' editorial.pk %}> {{ editorial.nombre }} </a></li>
+            <li> <a href={% url 'editorial:detail' editorial.pk %}> {{ editorial.nombre }} </a></li>
         {% endfor %}
     </ul>
 

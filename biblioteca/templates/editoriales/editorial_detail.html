@@ -12,14 +12,14 @@
             <p>Sitio web de la Editorial: {{ editoriales.sitio_web }} </p>
             <p> La fecha de Fundacion de la editorial: {{editoriales.fecha_fundacion}} </p>
             <p>Volver a la 
-                <a href={% url 'books:editorial_list' %}> lista de Editoriales</a> 
+                <a href={% url 'editorial:list' %}> lista de Editoriales</a> 
             </p>
         {% else %}
             <h2> No se ha encontrado la editorial que buscabas</h2>
-            <p>puedes probar de nuevo en la <a href={% url 'books:editorial_list' %}> lista de Editoriales</a></p>
+            <p>puedes probar de nuevo en la <a href={% url 'editorial:list' %}> lista de Editoriales</a></p>
         {% endif %}
-        <button> <a href={% url "books:editorial_update"  editoriales.pk %}>Editar Editorial</a></button>
-        <button> <a href={% url "books:editorial_delete"  editoriales.pk %}>Borrar Editorial</a></button>
+        <button> <a href={% url "editorial:update"  editoriales.pk %}>Editar Editorial</a></button>
+        <button> <a href={% url "editorial:delete"  editoriales.pk %}>Borrar Editorial</a></button>
 
     </article>
 

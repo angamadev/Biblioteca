@@ -1,4 +1,3 @@
-from django.shortcuts import render
 from books.models.libro_model import Libro
 # from django.contrib.auth.decorators import login_required
 # from django.utils.decorators import method_decorator
@@ -13,10 +12,12 @@ class LibrosListView(ListView):
     template_name = 'libros/libro.html'
     context_object_name = "libros"
 
+
 class LibrosDetailView(DetailView):
     model = Libro
     template_name = 'libros/libro_detail.html'
     context_object_name = "libros"
+    
     
 class LibroCreateView(CreateView):
     model = Libro
@@ -30,8 +31,9 @@ class LibroCreateView(CreateView):
 
         ]
     template_name = 'libros/libro_create.html'
-    success_url = reverse_lazy('books:libro_list')
+    success_url = reverse_lazy('libro:list')
     context_object_name = "libros"
+    
     
 class LibroUpdateView(UpdateView):
     model = Libro
@@ -42,28 +44,16 @@ class LibroUpdateView(UpdateView):
         "numero_paginas",
         "idioma",
         "editorial"
-
         ]
+    
     template_name = 'libros/libro_update.html'
-    success_url = reverse_lazy('books:libro_list')
+    success_url = reverse_lazy('libro:list')
     context_object_name = "libros"
+    
     
 class LibroDeteteView(DeleteView):
         model = Libro
-        success_url = reverse_lazy('books:libro_list')
+        success_url = reverse_lazy('libro:list')
         template_name = 'libros/libro_delete.html'
     
-# def libros_view(request):
-#     libros = Libro.objects.all()
-#     context = {
-#         'libros' : libros,
-#     }
-#     return render(request, 'libros/libro.html', context)
-
-# def libro_detail(request, id):
-#     libro = Libro.objects.get(pk=id)
     
-#     context = {
-#         'libro' : libro,
-#     }
-#     return render(request, 'libros/libro_detail.html', context)

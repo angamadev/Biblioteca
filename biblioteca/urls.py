@@ -23,7 +23,9 @@ from .views import home_view,search_view,ContactUsFormView,SearchFormView
 
 urlpatterns = [
     path("", home_view, name='home'),
-    path('', include('books.urls', namespace='books')),
+    path('libros/', include('books.url.libro_url', namespace='libro')),
+    path('autores/', include('books.url.autor_url', namespace='autor')),
+    path('editoriales/', include('books.url.editorial_url', namespace='editorial')),
     path("contact", ContactUsFormView.as_view(), name='contacto'),
     path('admin/', admin.site.urls),
     path("buscar/", search_view, name='search'),
