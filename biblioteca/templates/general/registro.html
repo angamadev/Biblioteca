@@ -1,0 +1,60 @@
+{% extends "general/layout.html" %}
+{% block head_title %}Registro{% endblock %}
+{% block h1_title %}Registro de Usuario{% endblock %} 
+{% block page_content %}
+{% load static %}
+
+{% if form %}
+  {% if error_message %}
+  <p style="color: red;"> {{ error_message }} </p>
+  {% endif %}
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button> Enviar </button>
+    </form>
+{% else %}
+  <p style="color: red;"> {{ msg }} </p>
+{% endif %}
+
+{% comment %} <main>
+    <form action="" method="post" enctype="multipart/form-data">
+      <fieldset><legend>Datos Basicos de Registro</legend>
+        <p> <label for="nombre">Nombre Completo</label><br>
+            <input type="text" name="name" id="nombre" size="50">
+        </p>
+        <p><label for="birth">Fecha Nacimiento</label>
+          <input type="date" name="fecha_nac" id="birth">
+        </p>
+        <p> <label for="email">Introduzca el Correo Electronico </label>
+            <input type="email" name="Email" id="email">
+        </p>
+        <p>Direccion: 
+          <label for="street">  Calle</label>
+          <input type="text" name="Calle" id="street" size="30"> 
+          <label for="num_street"> Numero </label>
+          <input type="number" name="Numero_calle" id="num_street" size="4" min="0" max="9999">
+          <label for="city"> Ciudad</label>
+          <input type="text" name="Ciudad" id="city">
+        </p>
+        <p><label for="url"> Pagina Web</label>
+          <input type="url" name="web" id="url">
+        </p>
+        <p><label for="foto">Foto</label>
+            <input type="file" id="foto" name="foto" multiple>
+        </p>
+        <p> <label for="bio"> Biografia</label><br>
+          <textarea name="Biografia" id="bio" cols="65" rows="5"></textarea>
+        </p>
+        <p>
+          <label for="count_visit">Añadir contador de visitas.</label>
+          <input type="checkbox" name="contador_visitas" id="count_visit">
+        </p>
+      </fieldset>
+      <p>
+        <button>Enviar</button>
+      </p>
+    </form>
+  </main> {% endcomment %}
+{% endblock %}
+

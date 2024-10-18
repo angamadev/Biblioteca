@@ -1,0 +1,25 @@
+{% extends "general/layout.html" %}
+
+{% block head_title %}Login{% endblock %}
+
+{% block h1_title %}Login{% endblock %} 
+
+{% block page_content %}
+
+  {% load static %}
+
+  {% if error_message %}
+  <p style="color: red;"> {{ error_message }} </p>
+  {% endif %}
+  {% if request.user.is_authenticated %}
+    <h2> Usuario {{ user }} logeado correctamente</h2>
+    {% else %}
+
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button> Enviar </button>
+      </form>
+  {% endif %}
+
+{% endblock %}

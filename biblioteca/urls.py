@@ -27,6 +27,7 @@ urlpatterns = [
     path('autores/', include('books.url.autor_url', namespace='autor')),
     path('editoriales/', include('books.url.editorial_url', namespace='editorial')),
     path("contact", ContactUsFormView.as_view(), name='contacto'),
+    path('user/', include('books.url.user_url', namespace='user')), 
     path('admin/', admin.site.urls),
     path("buscar/", search_view, name='search'),
 ] + debug_toolbar_urls()

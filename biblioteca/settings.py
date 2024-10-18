@@ -130,6 +130,6 @@ INTERNAL_IPS = [
     "127.0.0.1",
 ]
 
-# LOGIN_URL = "/user/login"
-# LOGIN_REDIRECT_URL = "home"
-# LOGOUT_REDIRECT_URL = "home"
+LOGIN_URL = "user:login"
+LOGIN_REDIRECT_URL = "home"
+LOGOUT_REDIRECT_URL = "home"

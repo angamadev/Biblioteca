@@ -1,24 +1,26 @@
 from books.models.libro_model import Libro
-# from django.contrib.auth.decorators import login_required
-# from django.utils.decorators import method_decorator
+from django.contrib.auth.decorators import login_required
+from django.utils.decorators import method_decorator
 from django.views.generic import ListView,DetailView,CreateView,UpdateView,DeleteView
 from django.urls import reverse_lazy
 
 
 # Create your views here.
-# @method_decorator(login_required,name='dispatch')
+@method_decorator(login_required,name='dispatch')
 class LibrosListView(ListView):
     model = Libro
     template_name = 'libros/libro.html'
     context_object_name = "libros"
 
 
+@method_decorator(login_required,name='dispatch')
 class LibrosDetailView(DetailView):
     model = Libro
     template_name = 'libros/libro_detail.html'
     context_object_name = "libros"
     
-    
+
+@method_decorator(login_required,name='dispatch')
 class LibroCreateView(CreateView):
     model = Libro
     fields = [
@@ -34,7 +36,8 @@ class LibroCreateView(CreateView):
     success_url = reverse_lazy('libro:list')
     context_object_name = "libros"
     
-    
+
+@method_decorator(login_required,name='dispatch')
 class LibroUpdateView(UpdateView):
     model = Libro
     fields = [
@@ -51,6 +54,7 @@ class LibroUpdateView(UpdateView):
     context_object_name = "libros"
     
     
+@method_decorator(login_required,name='dispatch')
 class LibroDeteteView(DeleteView):
         model = Libro
         success_url = reverse_lazy('libro:list')
