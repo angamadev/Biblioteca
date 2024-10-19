@@ -4,13 +4,12 @@ from django.urls import reverse_lazy
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
-
+from books.decorators import is_user_created_editorial
 
 
 
 # Create your views here.
 @method_decorator(login_required,name='dispatch')
-
 class EditorialListView(ListView):
     model = Editorial
     template_name = 'editoriales/editorial.html'
@@ -47,7 +46,7 @@ class EditorialCreateView(CreateView):
         form.instance.created_by= self.request.user
         return super().form_valid(form)
     
-@method_decorator(login_required,name='dispatch')
+@method_decorator(is_user_created_editorial,name='dispatch')
 class EditorialUpdateView(UpdateView):
     model = Editorial
     fields = [
@@ -68,7 +67,7 @@ class EditorialUpdateView(UpdateView):
     context_object_name = "editoriales"
     
     
-@method_decorator(login_required,name='dispatch')
+@method_decorator(is_user_created_editorial,name='dispatch')
 class EditorialDeteteView(DeleteView):
         model = Editorial
         success_url = reverse_lazy('editorial:list')

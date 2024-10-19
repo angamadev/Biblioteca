@@ -18,9 +18,10 @@
             <h2> No se ha encontrado la editorial que buscabas</h2>
             <p>puedes probar de nuevo en la <a href={% url 'editorial:list' %}> lista de Editoriales</a></p>
         {% endif %}
-        <button> <a href={% url "editorial:update"  editoriales.pk %}>Editar Editorial</a></button>
-        <button> <a href={% url "editorial:delete"  editoriales.pk %}>Borrar Editorial</a></button>
-
+        {% if editoriales.created_by == request.user %}
+            <button> <a href={% url "editorial:update"  editoriales.pk %}>Editar Editorial</a></button>
+            <button> <a href={% url "editorial:delete"  editoriales.pk %}>Borrar Editorial</a></button>
+        {% endif %}
     </article>
 
 {% endblock %}

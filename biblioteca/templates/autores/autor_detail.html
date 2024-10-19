@@ -11,16 +11,17 @@
         {% if autores %}
                 <h2> Nombre del autor: {{autores.nombre}}</h2>
                 <p>Id del Autor: {{ autores.id }} </p>
-                <p> La fecha de nacimiento: {{autores.f_nac}} </p>
+                <p> La fecha de nacimiento: {{autores.fecha_nacimiento}} </p>
 
                 <p>Volver a la <a href={% url 'autor:list' %}> lista de autores</a></p>
                 {% else %}
             <h2> No se ha encontrado el Autor que buscabas</h2>
             <p>puedes probar de nuevo en la <a href={% url 'autor:list' %}> lista de autores</a></p>
         {% endif %}
-        <button> <a href={% url "autor:update"  autores.pk %}>Editar Autor</a></button>
-        <button> <a href={% url "autor:delete"  autores.pk %}>Borrar Autor</a></button>
-
-    </article>
+        {% if autores.created_by == request.user %}
+            <button> <a href={% url "autor:update"  autores.pk %}>Editar Autor</a></button>
+            <button> <a href={% url "autor:delete"  autores.pk %}>Borrar Autor</a></button>
+        {% endif %}
+        </article>
 
 {% endblock %}

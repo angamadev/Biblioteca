@@ -14,9 +14,10 @@
         {% else %}
             <h2> No se ha encontrado el libro que buscabas</h2>
         {% endif %}
-        <button> <a href={% url "libro:update"  libros.pk %}>Editar Libro</a></button>
-        <button> <a href={% url "libro:delete"  libros.pk %}>Borrar Libro</a></button>
-
-    </article>
+        {% if libros.created_by == request.user %}
+            <button> <a href={% url "libro:update"  libros.pk %}>Editar Libro</a></button>
+            <button> <a href={% url "libro:delete"  libros.pk %}>Borrar Libro</a></button>
+        {% endif %}
+        </article>
 
 {% endblock %}
