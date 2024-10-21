@@ -6,6 +6,9 @@ from django.urls import reverse,reverse_lazy
 from django.views.generic import TemplateView
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
+from django.contrib.auth.views import LoginView,LogoutView
+from django.contrib import messages
+from django.views.decorators.http import require_POST
 
 
 # Create your views here.
@@ -45,62 +48,81 @@ def registro_view(request):
         return render(request,'general/registro.html', context)
 
 
-def login_view(request):
-    if request.POST:
-        formulario = LoginForm(request.POST)
-        users = User.objects.filter(username="a")
-        print(users)
-        if formulario.is_valid():
-            username = formulario.cleaned_data["username"]
-            password = formulario.cleaned_data["password"]
-            user = authenticate(request, username=username, password=password)
-            if user is not None:
-                login(request,user)
-                return redirect(reverse_lazy("home"))
-            else:
-                context = {
-                    "form" : formulario,
-                    "success" : False,
-                    "error_message" : "Usuario no valido"
-                }
-                return render(request,'general/login.html', context)
+class MyLoginView(LoginView):
+    template_name = 'general/login.html'  # Nombre de tu plantilla HTML
+    redirect_authenticated_user = True  # Redirige a usuarios ya autenticados
+    success_url = reverse_lazy('home')  # URL a la que redirigir después del inicio de sesión exitoso
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['user'] = self.request.user
+        return context
+    
+# def login_view(request):
+#     if request.POST:
+#         formulario = LoginForm(request.POST)
+#         users = User.objects.filter(username="a")
+#         print(users)
+#         if formulario.is_valid():
+#             username = formulario.cleaned_data["username"]
+#             password = formulario.cleaned_data["password"]
+#             user = authenticate(request, username=username, password=password)
+#             if user is not None:
+#                 login(request,user)
+#                 return redirect(reverse_lazy("home"))
+#             else:
+#                 context = {
+#                     "form" : formulario,
+#                     "success" : False,
+#                     "error_message" : "Usuario no valido"
+#                 }
+#                 return render(request,'general/login.html', context)
             
             
-                message_content = f'El usuario {username} con contraseña {password} se ha registrado correctamente'
-                print(username)
-                User.objects.create_user(
-                    username = username,
-                    password = password,
-                )
+#                 message_content = f'El usuario {username} con contraseña {password} se ha registrado correctamente'
+#                 print(username)
+#                 User.objects.create_user(
+#                     username = username,
+#                     password = password,
+#                 )
                 
-                success = send_mail(
-                    "Creacion de contacto nuevo",
-                    message_content,
-                    "info@angamadev.com",
-                    ["angamadev@gmail.com"],
-                    fail_silently=False,
-                )
-                context = {
-                    "form" : formulario,
-                    "success" : success
-                }
+#                 success = send_mail(
+#                     "Creacion de contacto nuevo",
+#                     message_content,
+#                     "info@angamadev.com",
+#                     ["angamadev@gmail.com"],
+#                     fail_silently=False,
+#                 )
+#                 context = {
+#                     "form" : formulario,
+#                     "success" : success
+#                 }
                 
-                print(f'Se ha registrado el usuario { username } con contraseña {password} se ha registrado correctamente')
-                return render(request,'general/login.html', context)
+#                 print(f'Se ha registrado el usuario { username } con contraseña {password} se ha registrado correctamente')
+#                 return render(request,'general/login.html', context)
             
-        else:
-            context = {
-                "form" : formulario,
-            }
-            return render(request,'general/login.html', context)
-    else:
-        formulario = LoginForm()
-        context = {
-            "form" : formulario
-            }
-        return render(request,'general/login.html', context)
+#         else:
+#             context = {
+#                 "form" : formulario,
+#             }
+#             return render(request,'general/login.html', context)
+#     else:
+#         formulario = LoginForm()
+#         context = {
+#             "form" : formulario
+#             }
+#         return render(request,'general/login.html', context)
 @login_required
 def logout_view(request):
     logout(request)
     return redirect(reverse_lazy("home"))
 
+
+class MyLogoutView(LogoutView):
+    next_page = 'home'
+    # redirect_field_name = 'home'
+    # success_url = reverse_lazy('home')
+
+    # def get(self, request, *args, **kwargs):
+    #     messages.success(request, "Has cerrado sesión correctamente.")
+    #     return super().get(request, *args, **kwargs)

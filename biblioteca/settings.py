@@ -70,6 +70,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'biblioteca.context_processor.get_current_year',
+                'biblioteca.context_processor.get_stadistics',                
             ],
         },
     },

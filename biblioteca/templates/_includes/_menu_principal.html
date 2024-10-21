@@ -5,11 +5,27 @@
     <li><a href={% url 'editorial:list' %}>Editoriales</a>
     <li><a href={% url 'search' %}>Buscar</a>
     <li><a href={% url 'contacto' %}>Contacto</a>
-    {% if request.user.is_authenticated %}
-        <li><a href={% url "user:logout" %}>Cerrar Sesion</a></li></ul>
-        <h2>Hola {{ request.user }} Bienvenido </h2>
+    {% if usuario_logueado %}
+        </ul>
+        <p> <strong> Bienvenido {{ usuario_logueado }} </strong></p>
+        <form method="POST" action="{% url 'user:logout' %}">
+            {% csrf_token %}
+            <li type="submit"><a href={% url "user:logout" %}>Cerrar Sesion</a></li>
+        </form>
+        {% comment %} <li><a href={% url "user:logout" %}>Cerrar Sesion</a></li> {% endcomment %}
     {% else %}
-        <li><a href={% url "user:registro" %}>Registro</a></li>
-        <li><a href={% url "user:login" %}>Login</a></li>
+            <li><a href={% url "user:registro" %}>Registro</a></li>
+            <li><a href={% url "user:login" %}>Login</a></li>
+        </ul>
     {% endif %}
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+        <li class="{% if message.tags %}{{ message.tags }}{% endif %}">
+            {{ message }}
+        </li>
+    {% endfor %}
 </ul>
+{% endif %}
+<hr>
+

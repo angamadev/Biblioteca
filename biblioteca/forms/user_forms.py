@@ -12,6 +12,8 @@ class LoginForm(forms.Form):
         label="Contraseña"
     )
     
+
+
 class UserRegisterForm(forms.Form):
     username = forms.CharField(
         label="Nombre de usuario",
