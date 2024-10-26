@@ -2,7 +2,7 @@ import re
 from django import forms
 from django.contrib.auth.models import User
 from django.forms import ModelForm
-
+from django.utils.translation import gettext as _
 from books.models.editorial_model import Editorial
 
 # from books import forms
@@ -22,7 +22,7 @@ class EditorialCreate(forms.Form):
     def clean_nombre(self):
         nombre = self.cleaned_data["nombre"]
         if len(nombre) < 5:
-            raise forms.ValidationError("El nombre debe tener al menos 5 caracteres")
+            raise forms.ValidationError(_("El nombre debe tener al menos 5 caracteres"))
         return nombre
     
 class EditorialCreateModelforms(ModelForm):

@@ -15,6 +15,7 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 TEMPLATES_DIR = BASE_DIR / "biblioteca" / "templates"
+STATIC_DIR = BASE_DIR / "biblioteca" / "static"
 
 
 # Quick-start development settings - unsuitable for production
@@ -116,8 +117,17 @@ AUTH_PASSWORD_VALIDATORS = [
 LANGUAGE_CODE = 'es-ES'
 TIME_ZONE = 'Atlantic/Canary'
 USE_I18N = True
+USE_L10 = True
 USE_TZ = True
 
+LENGUAGES = [
+    ("en", "English"),
+    ("es", "Español"),
+]
+
+LOCALE_PATHS = [
+    BASE_DIR / "locale",
+]
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/

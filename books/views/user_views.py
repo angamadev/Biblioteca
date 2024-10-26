@@ -9,6 +9,7 @@ from django.utils.decorators import method_decorator
 from django.contrib.auth.views import LoginView,LogoutView
 from django.contrib import messages
 from django.views.decorators.http import require_POST
+from django.utils.translation import gettext as _
 
 
 # Create your views here.
@@ -30,7 +31,7 @@ def registro_view(request):
                 user.save()
                 
             context = {
-                "msg" : "Ususario creado correctamente",
+                "msg" : _("Ususario creado correctamente"),
                 
             }
             return render(request,'general/registro.html', context)

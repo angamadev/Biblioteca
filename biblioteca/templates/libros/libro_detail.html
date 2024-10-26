@@ -1,22 +1,24 @@
 {% extends "general/layout.html" %}
 
-{% block head_title %}Detalle de Libros{% endblock %}
+{% load i18n %}
 
-{% block h1_title %}Detalle de Libros{% endblock %} 
+{% block head_title %}{% trans "Detalle de Libros" %}{% endblock %}
+
+{% block h1_title %}{% trans "Detalle deLibros" %} {% endblock %} 
 
 {% block page_content %}
     <article id="{{ libros.pk }}">
         {% if libros %}
-            <h2> Titulo: {{ libros.titulo }}</h2>
-            <p>Numero isbn: {{ libros.isbn }} </p>
-            <p> La fecha de publicacion: {{libros.fecha_publicacion}} </p>
-            <p>Volver a la <a href={% url 'libro:list' %}> lista de Libros</a></p>
+            <h2> {% blocktrans %}Titulo: {{ libros.titulo }}{% endblocktrans %}</h2>
+            <p>{% blocktrans %}Numero isbn: {{ libros.isbn }} {% endblocktrans %}</p>
+            <p> {% blocktrans %}La fecha de publicacion: {{libros.fecha_publicacion}} {% endblocktrans %}</p>
+            <p>{% trans "Volver a la " %}<a href={% url 'libro:list' %}>{% trans "lista de Libros" %}</a></p>
         {% else %}
-            <h2> No se ha encontrado el libro que buscabas</h2>
+            <h2>{% trans " No se ha encontrado el libro que buscabas" %}</h2>
         {% endif %}
         {% if libros.created_by == request.user %}
-            <button> <a href={% url "libro:update"  libros.pk %}>Editar Libro</a></button>
-            <button> <a href={% url "libro:delete"  libros.pk %}>Borrar Libro</a></button>
+            <button> <a href={% url "libro:update"  libros.pk %}>{% trans "Editar Libro" %}</a></button>
+            <button> <a href={% url "libro:delete"  libros.pk %}>{% trans "Borrar Libro" %}</a></button>
         {% endif %}
         </article>
 

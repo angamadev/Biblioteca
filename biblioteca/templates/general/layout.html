@@ -1,31 +1,33 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block head_title %}Titulo Base{% endblock %}</title>
-    {% comment %} <link rel="stylesheet" href="styles.css"> <!-- Enlace a tu hoja de estilo CSS --> {% endcomment %}
-</head>
-<body>
-    <!-- Contenido de la página aquí -->
-    <header> <!-- Encabezado de la página -->
-        <!-- Elementos de encabezado, como logotipo o menú -->
-    </header>
-    <main> <!-- Contenido principal de la página -->
-        <!-- Sección principal del contenido -->
+    {% load static %}
+    {% load i18n %}  
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{% block head_title %}{% trans "Titulo Base" %}{% endblock %}</title>
+        <link rel="stylesheet" href="{% static 'css/notifications.css' %}">
+    </head>
+    <body>
+        <!-- Contenido de la página aquí -->
+        <header> <!-- Encabezado de la página -->
+            <!-- Elementos de encabezado, como logotipo o menú -->
+        </header>
+        <main> <!-- Contenido principal de la página -->
+            <!-- Sección principal del contenido -->
 
-        <h1> {% block h1_title %}Titulo Base{% endblock %} </h1>
+            <h1> {% block h1_title %}{% trans "Titulo Base" %}{% endblock %} </h1>
 
-        {% include "_includes/_menu_principal.html" %}
+            {% include "_includes/_menu_principal.html" %}
 
-        {% block page_content %}
+            {% block page_content %}
 
-        {% endblock %}
-        
-    </main>
+            {% endblock %}
+            
+        </main>
 
-    {% include "_includes/_footer_principal.html" %}
+        {% include "_includes/_footer_principal.html" %}
 
-    {% comment %} <script src="script.js"></script> <!-- Enlace a tu archivo JavaScript --> {% endcomment %}
-</body>
+        {% comment %} <script src="script.js"></script> <!-- Enlace a tu archivo JavaScript --> {% endcomment %}
+    </body>
 </html>

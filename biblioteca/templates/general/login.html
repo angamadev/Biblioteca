@@ -1,8 +1,10 @@
 {% extends "general/layout.html" %}
 
-{% block head_title %}Login{% endblock %}
+{% load i18n %}
 
-{% block h1_title %}Login{% endblock %} 
+{% block head_title %}{% trans"Login" $}{% endblock %}
+
+{% block h1_title %}{% trans"Login" $}{% endblock %} 
 
 {% block page_content %}
 
@@ -12,13 +14,13 @@
   <p style="color: red;"> {{ error_message }} </p>
   {% endif %}
   {% if request.user.is_authenticated %}
-    <h2> Usuario {{ user }} logeado correctamente</h2>
+    <h2> {% blocktrans %}Usuario {{ user }} logeado correctamente{% endblocktrans %}</h2>
     {% else %}
 
     <form action="" method="post">
         {% csrf_token %}
         {{ form.as_p }}
-        <button> Enviar </button>
+        <button> {% trans"Enviar" $} </button>
       </form>
   {% endif %}
 

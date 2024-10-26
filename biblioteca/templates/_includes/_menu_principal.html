@@ -1,31 +1,32 @@
+{% load i18n %}
+
 <ul>
-    <li><a href={% url 'home' %}>Inicio</a>
-    <li><a href={% url 'autor:list' %}>Autores</a>
-    <li><a href={% url 'libro:list' %}>Libros</a>
-    <li><a href={% url 'editorial:list' %}>Editoriales</a>
-    <li><a href={% url 'search' %}>Buscar</a>
-    <li><a href={% url 'contacto' %}>Contacto</a>
+    <li><a href={% url 'home' %}>{% trans "Inicio" %} </a>
+    <li><a href={% url 'autor:list' %}>{% trans "Autores" %}</a>
+    <li><a href={% url 'libro:list' %}>{% trans "Libros" %}</a>
+    <li><a href={% url 'editorial:list' %}>{% trans "Editoriales" %}</a>
+    <li><a href={% url 'search' %}>{% trans "Buscar" %}</a>
+    <li><a href={% url 'contacto' %}>{% trans "Contacto"%}</a>
     {% if usuario_logueado %}
         </ul>
-        <p> <strong> Bienvenido {{ usuario_logueado }} </strong></p>
+        <p> {% blocktrans %}<strong> Bienvenido {{ usuario_logueado }} {% endblocktrans %}</strong></p>
         <form method="POST" action="{% url 'user:logout' %}">
             {% csrf_token %}
             <li type="submit"><a href={% url "user:logout" %}>Cerrar Sesion</a></li>
         </form>
-        {% comment %} <li><a href={% url "user:logout" %}>Cerrar Sesion</a></li> {% endcomment %}
     {% else %}
-            <li><a href={% url "user:registro" %}>Registro</a></li>
-            <li><a href={% url "user:login" %}>Login</a></li>
+            <li><a href={% url "user:registro" %}>{% trans "Registro" %}</a></li>
+            <li><a href={% url "user:login" %}>{% trans "Login" %}</a></li>
         </ul>
     {% endif %}
 {% if messages %}
-<ul class="messages">
-    {% for message in messages %}
-        <li class="{% if message.tags %}{{ message.tags }}{% endif %}">
-            {{ message }}
-        </li>
-    {% endfor %}
-</ul>
+    <ul class="messages">
+        {% for message in messages %}
+            <li class="{% if message.tags %}{{ message.tags }}{% endif %}">
+                {{ message }}
+            </li>
+        {% endfor %}
+    </ul>
 {% endif %}
 <hr>
 

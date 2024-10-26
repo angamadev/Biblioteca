@@ -5,6 +5,7 @@ from .forms import ContactForm
 from django.views.generic.edit import FormView
 from django.core.mail import send_mail
 from django import forms
+from django.utils.translation import gettext as _
 
 
 # Vistas generales de la aplicacion
@@ -22,10 +23,10 @@ class ContactUsFormView(FormView):
         nombre = form.cleaned_data["nombre"]
         email = form.cleaned_data["email"]
         comentario = form.cleaned_data["comentario"]
-        message_content = f'{nombre} con email {email} ha escrito lo siguiente: {comentario}'
+        message_content = _(f'{nombre} con email {email} ha escrito lo siguiente: {comentario}')
         
         success = send_mail(
-            "formulario de contacto de mi web de Biblioteca",
+            _("formulario de contacto de mi web de Biblioteca"),
             message_content,
             "info@angamadev.com",
             ["angamadev@gmail.com"],

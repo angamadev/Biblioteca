@@ -1,6 +1,7 @@
 <footer> <!-- Pie de página -->
+{% load i18n %}
     <hr>
-    <p> Actualmente tenemos: {{ n_libros}} Libros, {{ n_autores }} Autores y {{ n_editoriales }} Editoriales </p>
-    <p> {{ current_year }} - Conquer Blocks, Todos los derechos reservados </p>
+    <p> {% blocktrans %}Actualmente tenemos: {{ n_libros}} Libros, {{ n_autores }} Autores y {{ n_editoriales }} Editoriales {% endblocktrans %}</p>
+    <p> {% blocktrans %}{{ current_year }} - Conquer Blocks, Todos los derechos reservados {% endblocktrans %}</p>
     <!-- Información de contacto o créditos -->
 </footer>

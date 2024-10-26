@@ -1,17 +1,19 @@
 {% extends "general/layout.html" %}
 
-{% block head_title %}Actualizar Libro{% endblock %}
+{% load i18n %}
 
-{% block h1_title %}Actualizar Libro{% endblock %} 
+{% block head_title %}{% trans "Actualizar Libro" %}{% endblock %}
+
+{% block h1_title %}{% trans "Actualizar Libro" %}{% endblock %} 
 
 {% block page_content %}
-        <h2> Datos del Libro {{ libro.id }}</h2>
+        <h2> {% blocktrans %}Datos del Libro {{ libro.id }}{% endblocktrans %}</h2>
 
         <form action="" method="POST">
             {% csrf_token %}
             {{ form.as_p }}
-            <button>Actualizar</button>
-            <button><a href={% url 'libro:detail' object.pk %}>Cancelar</a></button>
+            <button>{% trans "Actualizar" %}</button>
+            <button><a href={% url 'libro:detail' object.pk %}>{% trans "Cancelar" %}</a></button>
         </form> 
 
 {% endblock %}

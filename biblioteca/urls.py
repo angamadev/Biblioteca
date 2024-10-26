@@ -30,4 +30,5 @@ urlpatterns = [
     path('user/', include('books.url.user_url', namespace='user')), 
     path('admin/', admin.site.urls),
     path("buscar/", search_view, name='search'),
+
 ] + debug_toolbar_urls()

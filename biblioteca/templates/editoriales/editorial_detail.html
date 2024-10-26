@@ -1,26 +1,28 @@
 {% extends "general/layout.html" %}
 
+{% load i18n %}
+
 {% block head_title %}Detalle de Editoriales{% endblock %}
 
-{% block h1_title %}Detalle de Editoriales{% endblock %} 
+{% block h1_title %}{% trans "Detalle de Editoriales" %}{% endblock %} 
 
 {% block page_content %}
     <article id="{{ editoriales.pk }}">
 
         {% if editoriales %}
-            <h2> Nombre de la editorial: {{editoriales.nombre}}</h2>
-            <p>Sitio web de la Editorial: {{ editoriales.sitio_web }} </p>
-            <p> La fecha de Fundacion de la editorial: {{editoriales.fecha_fundacion}} </p>
-            <p>Volver a la 
-                <a href={% url 'editorial:list' %}> lista de Editoriales</a> 
+            <h2>{% blocktrans %} Nombre de la editorial: {{editoriales.nombre}}{% endblocktrans %}</h2>
+            <p>{% blocktrans %}Sitio web de la Editorial: {{ editoriales.sitio_web }} {% endblocktrans %}</p>
+            <p>{% blocktrans %} La fecha de Fundacion de la editorial: {{editoriales.fecha_fundacion}} {% endblocktrans %}</p>
+            <p>{% trans "Volver a la" %}
+                <a href={% url 'editorial:list' %}> {% trans "lista de Editoriales" %}</a>
             </p>
         {% else %}
-            <h2> No se ha encontrado la editorial que buscabas</h2>
-            <p>puedes probar de nuevo en la <a href={% url 'editorial:list' %}> lista de Editoriales</a></p>
+            <h2> {% trans "o se ha encontrado la editorial que buscabas" %}</h2>
+            <p>{% trans "puedes probar de nuevo en la "%}<a href={% url 'editorial:list' %}> {% trans "lista de Editoriales" %}</a></p>
         {% endif %}
         {% if editoriales.created_by == request.user %}
-            <button> <a href={% url "editorial:update"  editoriales.pk %}>Editar Editorial</a></button>
-            <button> <a href={% url "editorial:delete"  editoriales.pk %}>Borrar Editorial</a></button>
+            <button> <a href={% url "editorial:update"  editoriales.pk %}>{% trans "Editar Editorial" %}</a></button>
+            <button> <a href={% url "editorial:delete"  editoriales.pk %}>{% trans "Borrar Editorial" %}</a></button>
         {% endif %}
     </article>
 

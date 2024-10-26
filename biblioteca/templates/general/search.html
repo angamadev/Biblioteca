@@ -1,92 +1,51 @@
 {% extends "general/layout.html" %}
 
-{% block head_title %}Pagina de busqueda{% endblock %}
-{% block h1_title %}Bienvenido a la pagina de Busqueda{% endblock %} 
+{% load i18n %}
+
+{% block head_title %}{% trans "Pagina de busqueda" %}{% endblock %}
+{% block h1_title %}{% trans "Bienvenido a la pagina de Busqueda" %}{% endblock %} 
 
 {% block page_content %}
-    <p> Contenido de la pagina de Busqueda</p>
-    {% comment %} <form action="" method="get">
-        <h2> Busca Autores, Libros y Editoriales </h2>
-        <div>
-            <label for="">Introduce cualquier cadena de texto</label>
-            <input type="text" name="q" required>
-            <button>Buscar</button>
-        </div>
-        {% if request.GET %}
-            <div>
-            <h3> Resultado </h3>
-                {% if editoriales %}
-                    <h4> Editoriales: </h4>
-                    <ul> 
-                        {% for editorial in editoriales %}
-                            <li>{{ editorial.nombre }} </li>               
-                        {% endfor %}
-                    </ul> 
-                {% else%}   
-                    <p> No existen Editoriales con los criterios de busqueda </p>
-                {% endif %}
-                {% if  autores %}
-                    <h4> Autores: </h4>
-                    <ul> 
-                        {% for autor in autores %}
-                            <li>{{ autor.nombre }} </li>               
-                        {% endfor %}
-                    </ul>
-                {% else %}
-                <p> No existen Autores con los criterios de busqueda </p>
-                {% endif %}
-                
-                {% if  libros %}
-                    <h4> Libros: </h4>
-                    <ul> 
-                        {% for libro in libros %}
-                            <li>{{ libro.titulo }} </li>               
-                        {% endfor %}
-                    </ul>
-                {% else %}
-                    <p> No existen Libros con los criterios de busqueda </p>
-                {% endif %}
-            {% endif %}
-    </form> {% endcomment %}
+    <p> {% trans "Contenido de la pagina de Busqueda" %}</p>
     <div>
         <form action="" method="get">
         {{ formulario.as_p }}
-        <button>Enviar</button>
+        <button>{% trans "Enviar" %}</button>
         </form>
         {% comment %} Ha partir de aqui pedimos si esta en Request {% endcomment %}
         {% if request.GET %}
             <div>
-            <h3> Resultado </h3>
+            <h3> {% trans "Resultado" %} </h3>
                 {% if editoriales %}
-                    <h4> Editoriales: </h4>
+                    <h4> {% trans "Editoriales:" %} </h4>
                     <ul> 
                         {% for editorial in editoriales %}
                             <li><a href={% url 'editorial:detail' editorial.id %}>{{ editorial.nombre }} </a> </li>               
                         {% endfor %}
                     </ul> 
                 {% else%}   
-                    <p> No existen Editoriales con los criterios de busqueda </p>
+                    <p> {% trans "No existen Editoriales con los criterios de busqueda " %}</p>
                 {% endif %}
                 {% if  autores %}
-                    <h4> Autores: </h4>
+                    <h4> {% trans "Autores: " %}</h4>
                     <ul> 
                         {% for autor in autores %}
                             <li><a href={% url 'autor:detail' autor.id %}>{{ autor.nombre }} </a></li>               
                         {% endfor %}
                     </ul>
                 {% else %}
-                <p> No existen Autores con los criterios de busqueda </p>
+                <p>{% trans " No existen Autores con los criterios de busqueda " %}</p>
                 {% endif %}
                 
                 {% if  libros %}
-                    <h4> Libros: </h4>
+                    <h4> {% trans "Libros: " %}</h4>
                     <ul> 
                         {% for libro in libros %}
                             <li><a href={% url 'libro:detail' libro.id %}>{{ libro.titulo }} </a></li>               
                         {% endfor %}
                     </ul>
                 {% else %}
-                    <p> No existen Libros con los criterios de busqueda </p>
+                    <p> {% trans "No existen Libros con los criterios de busqueda" %} </p>
                 {% endif %}
             </div>                
         {% endif %}

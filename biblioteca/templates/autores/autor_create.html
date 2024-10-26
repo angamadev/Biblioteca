@@ -1,16 +1,18 @@
 {% extends "general/layout.html" %}
 
-{% block head_title %}Nuevo Autor{% endblock %}
+{% load i18n %}
 
-{% block h1_title %}Nueva Autor{% endblock %} 
+{% block head_title %}{% trans "Nuevo Autor" %}{% endblock %}
+
+{% block h1_title %}{% trans "Nuevo Autor"%}{% endblock %} 
 
 {% block page_content %}
-        <h2> Datos del nuevo Autor</h2>
+        <h2> {% trans "Datos del nuevo Autor" %}</h2>
 
         <form action="" method="POST">
             {% csrf_token %}
             {{ form.as_p }}
-            <button>Crear Autor</button>
+            <button>{% trans "Crear Autor" %}</button>
         </form> 
 
 {% endblock %}

@@ -1,5 +1,7 @@
 {% extends "general/layout.html" %}
 
+{% load i18n %}
+
 {% block head_title %}Detalle de Autores{% endblock %}
 
 {% block h1_title %}Detalle de Autores{% endblock %} 
@@ -9,18 +11,18 @@
     <article id="{{ autores.pk }}">
 
         {% if autores %}
-                <h2> Nombre del autor: {{autores.nombre}}</h2>
-                <p>Id del Autor: {{ autores.id }} </p>
-                <p> La fecha de nacimiento: {{autores.fecha_nacimiento}} </p>
+                <h2> {% blocktrans %}Nombre del autor: {{autores.nombre}}{% endblocktrans %}</h2>
+                <p>{% blocktrans %}Id del Autor: {{ autores.id }} {% endblocktrans %}</p>
+                <p> {% blocktrans %}La fecha de nacimiento: {{autores.fecha_nacimiento}} {% endblocktrans %}</p>
 
-                <p>Volver a la <a href={% url 'autor:list' %}> lista de autores</a></p>
+                <p>{% trans "Volver a la " %}<a href={% url 'autor:list' %}> {% trans "lista de autores" %}</a></p>
                 {% else %}
-            <h2> No se ha encontrado el Autor que buscabas</h2>
-            <p>puedes probar de nuevo en la <a href={% url 'autor:list' %}> lista de autores</a></p>
+            <h2> {% trans "No se ha encontrado el Autor que buscabas" %}</h2>
+            <p>{% trans "puedes probar de nuevo en la " %}<a href={% url 'autor:list' %}> {% trans "lista de autores" %}</a></p>
         {% endif %}
         {% if autores.created_by == request.user %}
-            <button> <a href={% url "autor:update"  autores.pk %}>Editar Autor</a></button>
-            <button> <a href={% url "autor:delete"  autores.pk %}>Borrar Autor</a></button>
+            <button> <a href={% url "autor:update"  autores.pk %}>{% trans "Editar Autor"%}</a></button>
+            <button> <a href={% url "autor:delete"  autores.pk %}>{% trans "Borrar Autor"%}</a></button>
         {% endif %}
         </article>
 

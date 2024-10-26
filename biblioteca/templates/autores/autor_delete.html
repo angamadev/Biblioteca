@@ -1,16 +1,18 @@
 {% extends "general/layout.html" %}
 
-{% block head_title %}Borrar Autor{% endblock %}
+{% load i18n %}
 
-{% block h1_title %}Borrar Autor{% endblock %} 
+{% block head_title %}{% trans "Borrar Autor" %}{% endblock %}
+
+{% block h1_title %}{% trans "Borrar Autor" %}{% endblock %} 
 
 {% block page_content %}
-        <h2> Deseas borrar {{ object.nombre }}?</h2>
+        <h2> {% blocktrans %}Deseas borrar {{ object.nombre }}?{% endblocktrans%}</h2>
 
         <form action="" method="POST">
             {% csrf_token %}
             {{ form }}
-            <button>Eliminar</button>
+            <button>{% trans "Eliminar" %}</button>
         </form> 
 
 {% endblock %}

@@ -1,8 +1,9 @@
 {% extends "general/layout.html" %}
+{% load i18n %}
 
-{% block head_title %}Homepage{% endblock %}
-{% block h1_title %}Bienvenido a la pagina de inicio{% endblock %} 
+{% block head_title %}{% trans "Homepage" %}{% endblock %}
+{% block h1_title %}{% trans "Pagina de inicio" %}{% endblock %} 
 
 {% block page_content %}
-    <p> Contenido de la pagina Home</p>
+    <p> {% trans "Contenido de la pagina Home" %}</p>
 {% endblock %}
