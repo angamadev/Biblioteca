@@ -31,7 +31,7 @@ def registro_view(request):
                 user.save()
                 
             context = {
-                "msg" : _("Ususario creado correctamente"),
+                "msg" : _("Usuario creado correctamente"),
                 
             }
             return render(request,'general/registro.html', context)

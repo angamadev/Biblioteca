@@ -9,9 +9,10 @@
 {% block page_content %}
     <article id="{{ libros.pk }}">
         {% if libros %}
-            <h2> {% blocktrans %}Titulo: {{ libros.titulo }}{% endblocktrans %}</h2>
-            <p>{% blocktrans %}Numero isbn: {{ libros.isbn }} {% endblocktrans %}</p>
-            <p> {% blocktrans %}La fecha de publicacion: {{libros.fecha_publicacion}} {% endblocktrans %}</p>
+            <h2> {% trans "Titulo: " %}{{ libros.titulo }} </h2>
+            <p>{% trans "Numero isbn: " %}{{ libros.isbn }} </p>
+            <p> {% trans "La fecha de publicacion: " %}{{libros.fecha_publicacion}} </p>
+            <p> {% trans "Descripcion del libro: " %}{{ libros.descripcion}} </p>
             <p>{% trans "Volver a la " %}<a href={% url 'libro:list' %}>{% trans "lista de Libros" %}</a></p>
         {% else %}
             <h2>{% trans " No se ha encontrado el libro que buscabas" %}</h2>

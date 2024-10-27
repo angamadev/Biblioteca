@@ -19,9 +19,15 @@ from django.contrib import admin
 from django.urls import path
 from django.urls import include, path
 from debug_toolbar.toolbar import debug_toolbar_urls # type: ignore
-from .views import home_view,search_view,ContactUsFormView,SearchFormView
+from .views import home_view,search_view,ContactUsFormView,SearchFormView #,SetLanguageView
+from django.conf.urls.i18n import i18n_patterns
+from django.conf import settings
 
 urlpatterns = [
+    path('i18n/', include('django.conf.urls.i18n')),
+] + debug_toolbar_urls()
+
+urlpatterns += i18n_patterns(
     path("", home_view, name='home'),
     path('libros/', include('books.url.libro_url', namespace='libro')),
     path('autores/', include('books.url.autor_url', namespace='autor')),
@@ -30,5 +36,9 @@ urlpatterns = [
     path('user/', include('books.url.user_url', namespace='user')), 
     path('admin/', admin.site.urls),
     path("buscar/", search_view, name='search'),
+)
 
-] + debug_toolbar_urls()
+if 'rosetta' in settings.INSTALLED_APPS:
+    urlpatterns += [
+        path('rosetta/', include('rosetta.urls')),
+    ]

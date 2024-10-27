@@ -2,9 +2,9 @@
 
 {% load i18n %}
 
-{% block head_title %}{% trans"Login" $}{% endblock %}
+{% block head_title %}{% trans "Acceso" %}{% endblock %}
 
-{% block h1_title %}{% trans"Login" $}{% endblock %} 
+{% block h1_title %}{% trans "Acceso" %}{% endblock %} 
 
 {% block page_content %}
 
@@ -14,13 +14,13 @@
   <p style="color: red;"> {{ error_message }} </p>
   {% endif %}
   {% if request.user.is_authenticated %}
-    <h2> {% blocktrans %}Usuario {{ user }} logeado correctamente{% endblocktrans %}</h2>
+    <h2> {% trans "Usuario " %}{{ user }} {% trans "logeado correctamente" %}</h2>
     {% else %}
 
     <form action="" method="post">
         {% csrf_token %}
         {{ form.as_p }}
-        <button> {% trans"Enviar" $} </button>
+        <button> {% trans "Enviar" %} </button>
       </form>
   {% endif %}
 

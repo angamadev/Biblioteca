@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-26 18:48+0100\n"
+"POT-Creation-Date: 2024-10-27 09:56+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -56,401 +56,404 @@ msgstr ""
 msgid "Las contraseñas no coinciden"
 msgstr ""
 
-#: biblioteca/templates/_includes/_footer_principal.html:3
+#: biblioteca/templates/_includes/_footer_principal.html:4
 #, python-format
 msgid ""
 "Actualmente tenemos: %(n_libros)s Libros, %(n_autores)s Autores y "
 "%(n_editoriales)s Editoriales "
 msgstr ""
 
-#: biblioteca/templates/_includes/_footer_principal.html:4
+#: biblioteca/templates/_includes/_footer_principal.html:5
 #, python-format
 msgid "%(current_year)s - Conquer Blocks, Todos los derechos reservados "
 msgstr ""
 
-#: biblioteca/templates/_includes/_menu_principal.html:2
+#: biblioteca/templates/_includes/_menu_principal.html:4
 msgid "Inicio"
 msgstr ""
 
-#: biblioteca/templates/_includes/_menu_principal.html:3
+#: biblioteca/templates/_includes/_menu_principal.html:5
 msgid "Autores"
 msgstr ""
 
-#: biblioteca/templates/_includes/_menu_principal.html:4
+#: biblioteca/templates/_includes/_menu_principal.html:6
 msgid "Libros"
 msgstr ""
 
-#: biblioteca/templates/_includes/_menu_principal.html:5
+#: biblioteca/templates/_includes/_menu_principal.html:7
 msgid "Editoriales"
 msgstr ""
 
-#: biblioteca/templates/_includes/_menu_principal.html:6
+#: biblioteca/templates/_includes/_menu_principal.html:8
 msgid "Buscar"
 msgstr ""
 
-#: biblioteca/templates/_includes/_menu_principal.html:7
+#: biblioteca/templates/_includes/_menu_principal.html:9
 msgid "Contacto"
 msgstr ""
 
-#: biblioteca/templates/_includes/_menu_principal.html:10
+#: biblioteca/templates/_includes/_menu_principal.html:12
 #, python-format
 msgid "<strong> Bienvenido %(usuario_logueado)s "
 msgstr ""
 
-#: biblioteca/templates/_includes/_menu_principal.html:16
+#: biblioteca/templates/_includes/_menu_principal.html:18
 msgid "Registro"
 msgstr ""
 
-#: biblioteca/templates/_includes/_menu_principal.html:17
+#: biblioteca/templates/_includes/_menu_principal.html:19
+#: biblioteca/templates/general/login.html:5
+#: biblioteca/templates/general/login.html:7
 msgid "Login"
 msgstr ""
 
-#: biblioteca/templates/autores/autor.html:3
 #: biblioteca/templates/autores/autor.html:5
+#: biblioteca/templates/autores/autor.html:7
 msgid "Pagina de Autores"
 msgstr ""
 
-#: biblioteca/templates/autores/autor.html:10
+#: biblioteca/templates/autores/autor.html:12
 msgid "Añadir nuevo Autor"
 msgstr ""
 
-#: biblioteca/templates/autores/autor.html:13
+#: biblioteca/templates/autores/autor.html:15
 msgid " Los autores son :"
 msgstr ""
 
-#: biblioteca/templates/autores/autor_create.html:3
 #: biblioteca/templates/autores/autor_create.html:5
+#: biblioteca/templates/autores/autor_create.html:7
 msgid "Nuevo Autor"
 msgstr ""
 
-#: biblioteca/templates/autores/autor_create.html:8
+#: biblioteca/templates/autores/autor_create.html:10
 msgid "Datos del nuevo Autor"
 msgstr ""
 
-#: biblioteca/templates/autores/autor_create.html:13
+#: biblioteca/templates/autores/autor_create.html:15
 msgid "Crear Autor"
 msgstr ""
 
-#: biblioteca/templates/autores/autor_delete.html:3
 #: biblioteca/templates/autores/autor_delete.html:5
-#: biblioteca/templates/autores/autor_detail.html:23
+#: biblioteca/templates/autores/autor_delete.html:7
+#: biblioteca/templates/autores/autor_detail.html:25
 msgid "Borrar Autor"
 msgstr ""
 
-#: biblioteca/templates/autores/autor_delete.html:8
-#: biblioteca/templates/editoriales/editorial_delete.html:8
+#: biblioteca/templates/autores/autor_delete.html:10
+#: biblioteca/templates/editoriales/editorial_delete.html:10
 #, python-format
 msgid "Deseas borrar %(object.nombre)s?"
 msgstr ""
 
-#: biblioteca/templates/autores/autor_delete.html:13
-#: biblioteca/templates/editoriales/editorial_delete.html:13
-#: biblioteca/templates/libros/libro_delete.html:13
+#: biblioteca/templates/autores/autor_delete.html:15
+#: biblioteca/templates/editoriales/editorial_delete.html:15
+#: biblioteca/templates/libros/libro_delete.html:15
 msgid "Eliminar"
-msgstr ""
-
-#: biblioteca/templates/autores/autor_detail.html:12
-#, python-format
-msgid "Nombre del autor: %(autores.nombre)s"
-msgstr ""
-
-#: biblioteca/templates/autores/autor_detail.html:13
-#, python-format
-msgid "Id del Autor: %(autores.id)s "
 msgstr ""
 
 #: biblioteca/templates/autores/autor_detail.html:14
 #, python-format
+msgid "Nombre del autor: %(autores.nombre)s"
+msgstr ""
+
+#: biblioteca/templates/autores/autor_detail.html:15
+#, python-format
+msgid "Id del Autor: %(autores.id)s "
+msgstr ""
+
+#: biblioteca/templates/autores/autor_detail.html:16
+#, python-format
 msgid "La fecha de nacimiento: %(autores.fecha_nacimiento)s "
 msgstr ""
 
-#: biblioteca/templates/autores/autor_detail.html:16
-#: biblioteca/templates/libros/libro_detail.html:13
+#: biblioteca/templates/autores/autor_detail.html:18
+#: biblioteca/templates/libros/libro_detail.html:15
 msgid "Volver a la "
 msgstr ""
 
-#: biblioteca/templates/autores/autor_detail.html:16
-#: biblioteca/templates/autores/autor_detail.html:19
+#: biblioteca/templates/autores/autor_detail.html:18
+#: biblioteca/templates/autores/autor_detail.html:21
 msgid "lista de autores"
 msgstr ""
 
-#: biblioteca/templates/autores/autor_detail.html:18
+#: biblioteca/templates/autores/autor_detail.html:20
 msgid "No se ha encontrado el Autor que buscabas"
 msgstr ""
 
-#: biblioteca/templates/autores/autor_detail.html:19
-#: biblioteca/templates/editoriales/editorial_detail.html:19
+#: biblioteca/templates/autores/autor_detail.html:21
+#: biblioteca/templates/editoriales/editorial_detail.html:21
 msgid "puedes probar de nuevo en la "
 msgstr ""
 
-#: biblioteca/templates/autores/autor_detail.html:22
+#: biblioteca/templates/autores/autor_detail.html:24
 msgid "Editar Autor"
 msgstr ""
 
-#: biblioteca/templates/autores/autor_update.html:3
 #: biblioteca/templates/autores/autor_update.html:5
+#: biblioteca/templates/autores/autor_update.html:7
 msgid "Modificar Autor"
 msgstr ""
 
-#: biblioteca/templates/autores/autor_update.html:8
+#: biblioteca/templates/autores/autor_update.html:10
 #, python-format
 msgid " Datos del Autor %(autor.id)s"
 msgstr ""
 
-#: biblioteca/templates/autores/autor_update.html:13
-#: biblioteca/templates/editoriales/editorial_update.html:13
-#: biblioteca/templates/libros/libro_update.html:13
+#: biblioteca/templates/autores/autor_update.html:15
+#: biblioteca/templates/editoriales/editorial_update.html:15
+#: biblioteca/templates/libros/libro_update.html:15
 msgid "Actualizar"
 msgstr ""
 
-#: biblioteca/templates/autores/autor_update.html:14
-#: biblioteca/templates/editoriales/editorial_update.html:14
-#: biblioteca/templates/libros/libro_update.html:14
+#: biblioteca/templates/autores/autor_update.html:16
+#: biblioteca/templates/editoriales/editorial_update.html:16
+#: biblioteca/templates/libros/libro_update.html:16
 msgid "Cancelar"
 msgstr ""
 
-#: biblioteca/templates/editoriales/editorial.html:3
 #: biblioteca/templates/editoriales/editorial.html:5
+#: biblioteca/templates/editoriales/editorial.html:7
 msgid "Pagina de Editoriales"
 msgstr ""
 
-#: biblioteca/templates/editoriales/editorial.html:9
+#: biblioteca/templates/editoriales/editorial.html:11
 msgid "Añadir nueva Editorial"
 msgstr ""
 
-#: biblioteca/templates/editoriales/editorial.html:12
+#: biblioteca/templates/editoriales/editorial.html:14
 msgid "Lista completa de Editoriales"
 msgstr ""
 
-#: biblioteca/templates/editoriales/editorial_create.html:3
+#: biblioteca/templates/editoriales/editorial_create.html:5
 msgid "Creacion de Editorial"
 msgstr ""
 
-#: biblioteca/templates/editoriales/editorial_create.html:5
+#: biblioteca/templates/editoriales/editorial_create.html:7
 msgid "Nueva Editoria"
 msgstr ""
 
-#: biblioteca/templates/editoriales/editorial_create.html:8
+#: biblioteca/templates/editoriales/editorial_create.html:10
 msgid "Datos de la Editoria"
 msgstr ""
 
-#: biblioteca/templates/editoriales/editorial_create.html:13
+#: biblioteca/templates/editoriales/editorial_create.html:15
 msgid "Crear Editoria"
 msgstr ""
 
-#: biblioteca/templates/editoriales/editorial_delete.html:3
 #: biblioteca/templates/editoriales/editorial_delete.html:5
-#: biblioteca/templates/editoriales/editorial_detail.html:23
+#: biblioteca/templates/editoriales/editorial_delete.html:7
+#: biblioteca/templates/editoriales/editorial_detail.html:25
 msgid "Borrar Editorial"
 msgstr ""
 
-#: biblioteca/templates/editoriales/editorial_detail.html:5
+#: biblioteca/templates/editoriales/editorial_detail.html:7
 msgid "Detalle de Editoriales"
 msgstr ""
 
-#: biblioteca/templates/editoriales/editorial_detail.html:11
+#: biblioteca/templates/editoriales/editorial_detail.html:13
 #, python-format
 msgid " Nombre de la editorial: %(editoriales.nombre)s"
 msgstr ""
 
-#: biblioteca/templates/editoriales/editorial_detail.html:12
+#: biblioteca/templates/editoriales/editorial_detail.html:14
 #, python-format
 msgid "Sitio web de la Editorial: %(editoriales.sitio_web)s "
 msgstr ""
 
-#: biblioteca/templates/editoriales/editorial_detail.html:13
+#: biblioteca/templates/editoriales/editorial_detail.html:15
 #, python-format
 msgid ""
 " La fecha de Fundacion de la editorial: %(editoriales.fecha_fundacion)s "
 msgstr ""
 
-#: biblioteca/templates/editoriales/editorial_detail.html:14
+#: biblioteca/templates/editoriales/editorial_detail.html:16
 msgid "Volver a la"
 msgstr ""
 
-#: biblioteca/templates/editoriales/editorial_detail.html:15
-#: biblioteca/templates/editoriales/editorial_detail.html:19
+#: biblioteca/templates/editoriales/editorial_detail.html:17
+#: biblioteca/templates/editoriales/editorial_detail.html:21
 msgid "lista de Editoriales"
 msgstr ""
 
-#: biblioteca/templates/editoriales/editorial_detail.html:18
+#: biblioteca/templates/editoriales/editorial_detail.html:20
 msgid "o se ha encontrado la editorial que buscabas"
 msgstr ""
 
-#: biblioteca/templates/editoriales/editorial_detail.html:22
+#: biblioteca/templates/editoriales/editorial_detail.html:24
 msgid "Editar Editorial"
 msgstr ""
 
-#: biblioteca/templates/editoriales/editorial_update.html:3
 #: biblioteca/templates/editoriales/editorial_update.html:5
+#: biblioteca/templates/editoriales/editorial_update.html:7
 msgid "Actualizar Editorial"
 msgstr ""
 
-#: biblioteca/templates/editoriales/editorial_update.html:8
+#: biblioteca/templates/editoriales/editorial_update.html:10
 #, python-format
 msgid " Datos del Libro %(editorial.id)s "
 msgstr ""
 
-#: biblioteca/templates/general/contact.html:3
 #: biblioteca/templates/general/contact.html:5
+#: biblioteca/templates/general/contact.html:7
 msgid "Pagina de contacto"
 msgstr ""
 
-#: biblioteca/templates/general/contact.html:10
+#: biblioteca/templates/general/contact.html:12
 msgid "Formulario enviado correctamente, Gracias "
 msgstr ""
 
-#: biblioteca/templates/general/contact.html:15
-#: biblioteca/templates/general/search.html:11
+#: biblioteca/templates/general/contact.html:17
+#: biblioteca/templates/general/login.html:23
+#: biblioteca/templates/general/search.html:13
 msgid "Enviar"
 msgstr ""
 
-#: biblioteca/templates/general/home.html:3
+#: biblioteca/templates/general/home.html:4
 msgid "Homepage"
 msgstr ""
 
-#: biblioteca/templates/general/home.html:4
-msgid "Bienvenido a la pagina de inicio"
+#: biblioteca/templates/general/home.html:5
+msgid "Pagina de inicio"
 msgstr ""
 
-#: biblioteca/templates/general/home.html:7
+#: biblioteca/templates/general/home.html:8
 msgid "Contenido de la pagina Home"
 msgstr ""
 
-#: biblioteca/templates/general/layout.html:7
-#: biblioteca/templates/general/layout.html:18
+#: biblioteca/templates/general/layout.html:8
+#: biblioteca/templates/general/layout.html:19
 msgid "Titulo Base"
 msgstr ""
 
-#: biblioteca/templates/general/login.html:15
+#: biblioteca/templates/general/login.html:17
 #, python-format
 msgid "Usuario %(user)s logeado correctamente"
 msgstr ""
 
-#: biblioteca/templates/general/search.html:3
+#: biblioteca/templates/general/search.html:5
 msgid "Pagina de busqueda"
 msgstr ""
 
-#: biblioteca/templates/general/search.html:4
+#: biblioteca/templates/general/search.html:6
 msgid "Bienvenido a la pagina de Busqueda"
 msgstr ""
 
-#: biblioteca/templates/general/search.html:7
+#: biblioteca/templates/general/search.html:9
 msgid "Contenido de la pagina de Busqueda"
 msgstr ""
 
-#: biblioteca/templates/general/search.html:17
+#: biblioteca/templates/general/search.html:19
 msgid "Resultado"
 msgstr ""
 
-#: biblioteca/templates/general/search.html:19
+#: biblioteca/templates/general/search.html:21
 msgid "Editoriales:"
 msgstr ""
 
-#: biblioteca/templates/general/search.html:26
+#: biblioteca/templates/general/search.html:28
 msgid "No existen Editoriales con los criterios de busqueda "
 msgstr ""
 
-#: biblioteca/templates/general/search.html:29
+#: biblioteca/templates/general/search.html:31
 msgid "Autores: "
 msgstr ""
 
-#: biblioteca/templates/general/search.html:36
+#: biblioteca/templates/general/search.html:38
 msgid " No existen Autores con los criterios de busqueda "
 msgstr ""
 
-#: biblioteca/templates/general/search.html:40
+#: biblioteca/templates/general/search.html:42
 msgid "Libros: "
 msgstr ""
 
-#: biblioteca/templates/general/search.html:47
+#: biblioteca/templates/general/search.html:49
 msgid "No existen Libros con los criterios de busqueda"
 msgstr ""
 
-#: biblioteca/templates/libros/libro.html:3
+#: biblioteca/templates/libros/libro.html:5
 msgid "Pagina de Libro"
 msgstr ""
 
-#: biblioteca/templates/libros/libro.html:5
+#: biblioteca/templates/libros/libro.html:7
 msgid "Pagina de Libros"
 msgstr ""
 
-#: biblioteca/templates/libros/libro.html:9
+#: biblioteca/templates/libros/libro.html:11
 msgid "Añadir nueva Libro"
 msgstr ""
 
-#: biblioteca/templates/libros/libro.html:12
+#: biblioteca/templates/libros/libro.html:14
 msgid "Lista completa de libros"
 msgstr ""
 
-#: biblioteca/templates/libros/libro_create.html:3
+#: biblioteca/templates/libros/libro_create.html:5
 msgid "Creacion de Libro"
 msgstr ""
 
-#: biblioteca/templates/libros/libro_create.html:5
+#: biblioteca/templates/libros/libro_create.html:7
 msgid "Nueva Libro"
 msgstr ""
 
-#: biblioteca/templates/libros/libro_create.html:8
+#: biblioteca/templates/libros/libro_create.html:10
 msgid " Datos del Libro"
 msgstr ""
 
-#: biblioteca/templates/libros/libro_create.html:13
+#: biblioteca/templates/libros/libro_create.html:15
 msgid "Crear Libro"
 msgstr ""
 
-#: biblioteca/templates/libros/libro_delete.html:3
 #: biblioteca/templates/libros/libro_delete.html:5
-#: biblioteca/templates/libros/libro_detail.html:19
+#: biblioteca/templates/libros/libro_delete.html:7
+#: biblioteca/templates/libros/libro_detail.html:21
 msgid "Borrar Libro"
 msgstr ""
 
-#: biblioteca/templates/libros/libro_delete.html:8
+#: biblioteca/templates/libros/libro_delete.html:10
 #, python-format
 msgid "\"Deseas borrar %(object.titulo)s?"
 msgstr ""
 
-#: biblioteca/templates/libros/libro_detail.html:3
+#: biblioteca/templates/libros/libro_detail.html:5
 msgid "Detalle de Libros"
 msgstr ""
 
-#: biblioteca/templates/libros/libro_detail.html:5
+#: biblioteca/templates/libros/libro_detail.html:7
 msgid "Detalle deLibros"
-msgstr ""
-
-#: biblioteca/templates/libros/libro_detail.html:10
-#, python-format
-msgid "Titulo: %(libros.titulo)s"
-msgstr ""
-
-#: biblioteca/templates/libros/libro_detail.html:11
-#, python-format
-msgid "Numero isbn: %(libros.isbn)s "
 msgstr ""
 
 #: biblioteca/templates/libros/libro_detail.html:12
 #, python-format
-msgid "La fecha de publicacion: %(libros.fecha_publicacion)s "
+msgid "Titulo: %(libros.titulo)s"
 msgstr ""
 
 #: biblioteca/templates/libros/libro_detail.html:13
-msgid "lista de Libros"
+#, python-format
+msgid "Numero isbn: %(libros.isbn)s "
+msgstr ""
+
+#: biblioteca/templates/libros/libro_detail.html:14
+#, python-format
+msgid "La fecha de publicacion: %(libros.fecha_publicacion)s "
 msgstr ""
 
 #: biblioteca/templates/libros/libro_detail.html:15
+msgid "lista de Libros"
+msgstr ""
+
+#: biblioteca/templates/libros/libro_detail.html:17
 msgid " No se ha encontrado el libro que buscabas"
 msgstr ""
 
-#: biblioteca/templates/libros/libro_detail.html:18
+#: biblioteca/templates/libros/libro_detail.html:20
 msgid "Editar Libro"
 msgstr ""
 
-#: biblioteca/templates/libros/libro_update.html:3
 #: biblioteca/templates/libros/libro_update.html:5
+#: biblioteca/templates/libros/libro_update.html:7
 msgid "Actualizar Libro"
 msgstr ""
 
-#: biblioteca/templates/libros/libro_update.html:8
+#: biblioteca/templates/libros/libro_update.html:10
 #, python-format
 msgid "Datos del Libro %(libro.id)s"
 msgstr ""

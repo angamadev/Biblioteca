@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
+from pdb import run
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -42,13 +43,16 @@ INSTALLED_APPS = [
     
     'django_extensions',
     'debug_toolbar',
+    'rosetta',
+    'modeltranslation',
     
-    'books'
+    'books',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -71,6 +75,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.i18n',
                 'biblioteca.context_processor.get_current_year',
                 'biblioteca.context_processor.get_stadistics',                
             ],
@@ -114,16 +119,25 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/5.1/topics/i18n/
 
-LANGUAGE_CODE = 'es-ES'
+LANGUAGE_CODE = 'es'
 TIME_ZONE = 'Atlantic/Canary'
 USE_I18N = True
 USE_L10 = True
 USE_TZ = True
+PREFIX_DEFAULT_LANGUAGE = True
 
-LENGUAGES = [
+LANGUAGES = [
     ("en", "English"),
     ("es", "Español"),
 ]
+
+LANGUAGE_COOKIE_NAME = 'django_language'
+
+MODELTRANSLATION_DEFAULT_LANGUAGE = 'es'
+MODELTRANSLATION_LANGUAGES = ('es', 'en')
+MODELTRANSLATION_FALLBACK_LANGUAGES = ('es', )
+MODELTRANSLATION_PREPOPULATE_LANGUAGE = 'es'
+
 
 LOCALE_PATHS = [
     BASE_DIR / "locale",
@@ -146,3 +160,4 @@ INTERNAL_IPS = [
 LOGIN_URL = "user:login"
 LOGIN_REDIRECT_URL = "home"
 LOGOUT_REDIRECT_URL = "home"
+

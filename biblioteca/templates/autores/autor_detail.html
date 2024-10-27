@@ -11,9 +11,9 @@
     <article id="{{ autores.pk }}">
 
         {% if autores %}
-                <h2> {% blocktrans %}Nombre del autor: {{autores.nombre}}{% endblocktrans %}</h2>
-                <p>{% blocktrans %}Id del Autor: {{ autores.id }} {% endblocktrans %}</p>
-                <p> {% blocktrans %}La fecha de nacimiento: {{autores.fecha_nacimiento}} {% endblocktrans %}</p>
+                <h2> {% trans "Nombre del autor: " %}{{autores.nombre}} </h2>
+                <p>{% trans "Id del Autor: "%}{{ autores.id }}  </p>
+                <p> {% trans "La fecha de nacimiento: " %}{{autores.fecha_nacimiento}}  </p>
 
                 <p>{% trans "Volver a la " %}<a href={% url 'autor:list' %}> {% trans "lista de autores" %}</a></p>
                 {% else %}

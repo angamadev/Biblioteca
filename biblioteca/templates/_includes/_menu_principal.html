@@ -7,18 +7,32 @@
     <li><a href={% url 'editorial:list' %}>{% trans "Editoriales" %}</a>
     <li><a href={% url 'search' %}>{% trans "Buscar" %}</a>
     <li><a href={% url 'contacto' %}>{% trans "Contacto"%}</a>
+
     {% if usuario_logueado %}
-        </ul>
-        <p> {% blocktrans %}<strong> Bienvenido {{ usuario_logueado }} {% endblocktrans %}</strong></p>
+        <li type="submit"><a href={% url "user:logout" %}>{% trans "Cerrar Sesion" %}</a></li>
         <form method="POST" action="{% url 'user:logout' %}">
             {% csrf_token %}
-            <li type="submit"><a href={% url "user:logout" %}>Cerrar Sesion</a></li>
+        </ul>
+            <p> <strong>{% trans "Bienvenido " %}{{ usuario_logueado }} </strong></p>
         </form>
     {% else %}
             <li><a href={% url "user:registro" %}>{% trans "Registro" %}</a></li>
             <li><a href={% url "user:login" %}>{% trans "Login" %}</a></li>
         </ul>
     {% endif %}
+
+    <form action="{% url 'set_language' %}" method="post">
+        {% csrf_token %}
+        <select name="language">
+            {% get_current_language as LANGUAGE_CODE %}
+            {% for lang_code, lang_name in LANGUAGES %}
+                <option value="{{ lang_code }}" {% if LANGUAGE_CODE == lang_code %}selected{% endif %}>{{ lang_name }} ({{ lang_code }})</option>
+            {% endfor %}
+        </select>
+        <input type="hidden" name="next" value="{{ request.path }}">
+        <button type="submit">{% trans "Cambiar Idioma" %}</button>
+    </form>
+    
 {% if messages %}
     <ul class="messages">
         {% for message in messages %}

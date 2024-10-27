@@ -7,7 +7,7 @@
 {% block h1_title %}{% trans "Actualizar Editorial" %}{% endblock %} 
 
 {% block page_content %}
-        <h2>{% blocktrans %} Datos del Libro {{ editorial.id }} {% endblocktrans %}</h2>
+        <h2>{% trans "Datos del Libro " %}{{ editorial.id }} </h2>
 
         <form action="" method="POST">
             {% csrf_token %}

@@ -10,14 +10,14 @@
     <article id="{{ editoriales.pk }}">
 
         {% if editoriales %}
-            <h2>{% blocktrans %} Nombre de la editorial: {{editoriales.nombre}}{% endblocktrans %}</h2>
-            <p>{% blocktrans %}Sitio web de la Editorial: {{ editoriales.sitio_web }} {% endblocktrans %}</p>
-            <p>{% blocktrans %} La fecha de Fundacion de la editorial: {{editoriales.fecha_fundacion}} {% endblocktrans %}</p>
+            <h2>{% trans "Nombre de la editorial: " %}{{editoriales.nombre}}</h2>
+            <p>{% trans "Sitio web de la Editorial: " %}{{ editoriales.sitio_web }} </p>
+            <p>{% trans "La fecha de Fundacion de la editorial: " %}{{ editoriales.fecha_fundacion }} </p>
             <p>{% trans "Volver a la" %}
                 <a href={% url 'editorial:list' %}> {% trans "lista de Editoriales" %}</a>
             </p>
         {% else %}
-            <h2> {% trans "o se ha encontrado la editorial que buscabas" %}</h2>
+            <h2> {% trans "No se ha encontrado la editorial que buscabas" %}</h2>
             <p>{% trans "puedes probar de nuevo en la "%}<a href={% url 'editorial:list' %}> {% trans "lista de Editoriales" %}</a></p>
         {% endif %}
         {% if editoriales.created_by == request.user %}

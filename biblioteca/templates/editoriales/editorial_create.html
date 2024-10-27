@@ -4,15 +4,15 @@
 
 {% block head_title %}{% trans "Creacion de Editorial"%}{% endblock %}
 
-{% block h1_title %}{% trans "Nueva Editoria"%}{% endblock %} 
+{% block h1_title %}{% trans "Nueva Editorial"%}{% endblock %} 
 
 {% block page_content %}
-        <h2> {% trans "Datos de la Editoria"%}</h2>
+        <h2> {% trans "Datos de la Editorial"%}</h2>
 
         <form action="" method="POST">
             {% csrf_token %}
             {{ form.as_p }}
-            <button>{% trans "Crear Editoria"%}</button>
+            <button>{% trans "Crear Editorial"%}</button>
         </form> 
 
 {% endblock %}

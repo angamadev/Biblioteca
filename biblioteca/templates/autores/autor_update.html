@@ -7,7 +7,7 @@
 {% block h1_title %}{% trans "Modificar Autor" %}{% endblock %} 
 
 {% block page_content %}
-        <h2> {% blocktrans %} Datos del Autor {{ autor.id }}{% endblocktrans %}</h2>
+        <h2> {% trans "Datos del Autor "%}{{ autor.id }}</h2>
 
         <form action="" method="POST">
             {% csrf_token %}

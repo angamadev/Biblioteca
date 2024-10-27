@@ -14,7 +14,7 @@
     <form action="" method="post">
         {% csrf_token %}
         {{ form.as_p }}
-        <button> {% trans"Enviar" %} </button>
+        <button> {% trans "Enviar" %} </button>
     </form>
   {% else %}
     <p style="color: red;"> {{ msg }} </p>

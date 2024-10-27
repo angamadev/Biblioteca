@@ -5,3 +5,6 @@ django-extensions==3.2.3
 pydot==3.0.1
 pyparsing==3.1.4
 sqlparse==0.5.1
+django-rosetta==0.10.1
+tox==4.23.2
+django-modeltranslation==0.19.10

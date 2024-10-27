@@ -7,7 +7,7 @@
 {% block h1_title %}{% trans "Borrar Editorial"%}{% endblock %} 
 
 {% block page_content %}
-        <h2> {% blocktrans %}Deseas borrar {{ object.nombre }}?{% endblocktrans %}</h2>
+        <h2> {% trans "Deseas borrar "%}{{ object.nombre }}? </h2>
 
         <form action="" method="POST">
             {% csrf_token %}
