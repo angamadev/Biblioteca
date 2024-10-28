@@ -1,0 +1,72 @@
+[
+{
+    "model": "books.libro",
+    "pk": 17,
+    "fields": {
+        "titulo": "El principito",
+        "titulo_es": "El principito",
+        "titulo_en": "The litle King",
+        "isbn": "0987654321",
+        "fecha_publicacion": "2024-10-13",
+        "numero_paginas": 1000,
+        "idioma": "ES",
+        "descripcion": "Descripción del libro en español",
+        "descripcion_es": "Descripción del libro en español",
+        "descripcion_en": "Descripción del libro en Ingles",
+        "editorial": 7,
+        "genero": "Aventuras",
+        "precio": "50.00",
+        "created_by": 1,
+        "autores": [
+            18
+        ]
+    }
+},
+{
+    "model": "books.libro",
+    "pk": 18,
+    "fields": {
+        "titulo": "El libro de Petete",
+        "titulo_es": "El libro de Petete",
+        "titulo_en": "Petete's Book",
+        "isbn": "12345678901",
+        "fecha_publicacion": "2021-10-13",
+        "numero_paginas": 200,
+        "idioma": "ES",
+        "descripcion": "Descripción del libro en español",
+        "descripcion_es": "Descripción del libro en español",
+        "descripcion_en": "Descripción del libro en Ingles",
+        "editorial": 33,
+        "genero": "Aventuras",
+        "precio": "28.00",
+        "created_by": 1,
+        "autores": [
+            1,
+            11
+        ]
+    }
+},
+{
+    "model": "books.libro",
+    "pk": 19,
+    "fields": {
+        "titulo": "1984",
+        "titulo_es": "1984",
+        "titulo_en": "1984",
+        "isbn": "78-0-451-5249",
+        "fecha_publicacion": "1949-06-08",
+        "numero_paginas": 328,
+        "idioma": "EN",
+        "descripcion": "Una distopía sobre un futuro totalitario.",
+        "descripcion_es": "Una distopía sobre un futuro totalitario.",
+        "descripcion_en": "A dystopia about a totalitarian future.",
+        "editorial": 33,
+        "genero": "Ciencia Ficcion",
+        "precio": "13.00",
+        "created_by": 3,
+        "autores": [
+            19
+        ]
+    }
+}
+]
