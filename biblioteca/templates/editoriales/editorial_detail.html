@@ -2,6 +2,8 @@
 
 {% load i18n %}
 
+{% load crispy_forms_tags %}
+
 {% block head_title %}Detalle de Editoriales{% endblock %}
 
 {% block h1_title %}{% trans "Detalle de Editoriales" %}{% endblock %} 
@@ -21,8 +23,12 @@
             <p>{% trans "puedes probar de nuevo en la "%}<a href={% url 'editorial:list' %}> {% trans "lista de Editoriales" %}</a></p>
         {% endif %}
         {% if editoriales.created_by == request.user %}
-            <button> <a href={% url "editorial:update"  editoriales.pk %}>{% trans "Editar Editorial" %}</a></button>
-            <button> <a href={% url "editorial:delete"  editoriales.pk %}>{% trans "Borrar Editorial" %}</a></button>
+            <form action="" method="post">
+            {% csrf_token %}
+            {{ form|crispy }}
+                <button class="btn btn-info"> <a href={% url "editorial:update"  editoriales.pk %}>{% trans "Editar Editorial" %}</a></button>
+                <button class="btn btn-warning"> <a href={% url "editorial:delete"  editoriales.pk %}>{% trans "Borrar Editorial" %}</a></button>
+            </form>
         {% endif %}
     </article>
 

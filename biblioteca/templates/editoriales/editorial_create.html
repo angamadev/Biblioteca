@@ -2,17 +2,18 @@
 
 {% load i18n %}
 
+{% load crispy_forms_tags %}
+
 {% block head_title %}{% trans "Creacion de Editorial"%}{% endblock %}
 
 {% block h1_title %}{% trans "Nueva Editorial"%}{% endblock %} 
 
 {% block page_content %}
         <h2> {% trans "Datos de la Editorial"%}</h2>
-
         <form action="" method="POST">
             {% csrf_token %}
-            {{ form.as_p }}
-            <button>{% trans "Crear Editorial"%}</button>
+            {{ form|crispy }}
+            <button class="btn btn-primary">{% trans "Crear Editorial"%}</button>
         </form> 
 
 {% endblock %}

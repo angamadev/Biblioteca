@@ -2,6 +2,8 @@
 
 {% load i18n %}
 
+{% load crispy_forms_tags %}
+
 {% block head_title %}Detalle de Autores{% endblock %}
 
 {% block h1_title %}Detalle de Autores{% endblock %} 
@@ -21,8 +23,12 @@
             <p>{% trans "puedes probar de nuevo en la " %}<a href={% url 'autor:list' %}> {% trans "lista de autores" %}</a></p>
         {% endif %}
         {% if autores.created_by == request.user %}
-            <button> <a href={% url "autor:update"  autores.pk %}>{% trans "Editar Autor"%}</a></button>
-            <button> <a href={% url "autor:delete"  autores.pk %}>{% trans "Borrar Autor"%}</a></button>
+            <form action="" method="post">
+                {% csrf_token %}
+                {{ form|crispy }}
+                <button class="btn btn-info"><a href={% url "autor:update"  autores.pk %}>{% trans "Editar Autor"%}</a></button> 
+                <button class="btn btn-warning"> <a href={% url "autor:delete"  autores.pk %}>{% trans "Borrar Autor"%}</a></button>
+            </form>
         {% endif %}
         </article>
 

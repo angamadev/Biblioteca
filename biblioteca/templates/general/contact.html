@@ -2,6 +2,8 @@
 
 {% load i18n %}
 
+{% load crispy_forms_tags %}
+
 {% block head_title %}{% trans "Pagina de contacto" %}{% endblock %}
 
 {% block h1_title %}{% trans "Pagina de contacto" %}{% endblock %} 
@@ -13,8 +15,8 @@
     {% else %}
         <form action="" method="POST">
             {% csrf_token %}
-            {{ form.as_p }}
-            <button>{% trans "Enviar" %}</button>
+            {{ form|crispy }}
+            <button class="btn btn-success">{% trans "Enviar" %}</button>
         </form>       
     {% endif %}
 

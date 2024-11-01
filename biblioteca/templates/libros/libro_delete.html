@@ -2,6 +2,8 @@
 
 {% load i18n %}
 
+{% load crispy_forms_tags %}
+
 {% block head_title %}{% trans "Borrar Libro" %}{% endblock %}
 
 {% block h1_title %}{% trans "Borrar Libro" %}{% endblock %} 
@@ -11,8 +13,8 @@
 
         <form action="" method="POST">
             {% csrf_token %}
-            {{ form }}
-            <button>{% trans "Eliminar" %}</button>
+            {{ form|crispy }}
+            <button class="btn btn-warning">{% trans "Eliminar" %}</button>
         </form> 
 
 {% endblock %}

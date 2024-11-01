@@ -2,17 +2,18 @@
 
 {% load i18n %}
 
+{% load crispy_forms_tags %}
+
 {% block head_title %}{% trans "Nuevo Autor" %}{% endblock %}
 
 {% block h1_title %}{% trans "Nuevo Autor"%}{% endblock %} 
 
 {% block page_content %}
         <h2> {% trans "Datos del nuevo Autor" %}</h2>
-
         <form action="" method="POST">
             {% csrf_token %}
-            {{ form.as_p }}
-            <button>{% trans "Crear Autor" %}</button>
+            {{ form|crispy }}
+            <button class="btn btn-primary">{% trans "Crear Autor" %}</button>
         </form> 
 
 {% endblock %}

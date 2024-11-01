@@ -2,6 +2,8 @@
 
 {% load i18n %}
 
+{% load crispy_forms_tags %}
+
 {% block head_title %}{% trans "Actualizar Editorial" %}{% endblock %}
 
 {% block h1_title %}{% trans "Actualizar Editorial" %}{% endblock %} 
@@ -11,9 +13,9 @@
 
         <form action="" method="POST">
             {% csrf_token %}
-            {{ form.as_p }}
-            <button>{% trans "Actualizar" %}</button>
-            <button><a href={% url 'editorial:detail' object.pk %}>{% trans "Cancelar" %}</a></button>
+            {{ form|crispy }}
+            <button class="btn btn-info">{% trans "Actualizar" %}</button>
+            <button class="btn btn-danger"><a href={% url 'editorial:detail' object.pk %}>{% trans "Cancelar" %}</a></button>
         </form> 
 
 {% endblock %}

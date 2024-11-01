@@ -1,4 +1,6 @@
 {% load i18n %}
+{% load crispy_forms_tags %}
+
 
 <ul>
     <li><a href={% url 'home' %}>{% trans "Inicio" %} </a>
@@ -21,18 +23,6 @@
         </ul>
     {% endif %}
 
-    <form action="{% url 'set_language' %}" method="post">
-        {% csrf_token %}
-        <select name="language">
-            {% get_current_language as LANGUAGE_CODE %}
-            {% for lang_code, lang_name in LANGUAGES %}
-                <option value="{{ lang_code }}" {% if LANGUAGE_CODE == lang_code %}selected{% endif %}>{{ lang_name }} ({{ lang_code }})</option>
-            {% endfor %}
-        </select>
-        <input type="hidden" name="next" value="{{ request.path }}">
-        <button type="submit">{% trans "Cambiar Idioma" %}</button>
-    </form>
-    
 {% if messages %}
     <ul class="messages">
         {% for message in messages %}

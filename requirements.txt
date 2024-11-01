@@ -8,3 +8,5 @@ sqlparse==0.5.1
 django-rosetta==0.10.1
 tox==4.23.2
 django-modeltranslation==0.19.10
+django-crispy-forms==2.3
+crispy-bootstrap5==2024.10

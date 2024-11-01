@@ -1,7 +1,9 @@
-<footer> <!-- Pie de página -->
-{% load i18n %}
-    <hr>
-    <p> {% trans "Actualmente tenemos: " %} {{ n_libros }} {% trans "Libros, " %}{{ n_autores }} {% trans "Autores y " %}{{ n_editoriales }} {% trans "Editoriales " %}</p>
-    <p>  {{ current_year }}{% trans " - Conquer Blocks, Todos los derechos reservados " %}</p>
-    <!-- Información de contacto o créditos -->
-</footer>
+<div class="container">
+    <footer> <!-- Pie de página -->
+    {% load i18n %}
+        <hr>
+        <p> {% trans "Actualmente tenemos: " %} {{ n_libros }} {% trans "Libros, " %}{{ n_autores }} {% trans "Autores y " %}{{ n_editoriales }} {% trans "Editoriales " %}</p>
+        <p>  {{ current_year }}{% trans " - Conquer Blocks, Todos los derechos reservados " %}</p>
+        <!-- Información de contacto o créditos -->
+    </footer>
+</div>

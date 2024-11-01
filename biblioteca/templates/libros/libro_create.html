@@ -2,6 +2,8 @@
 
 {% load i18n %}
 
+{% load crispy_forms_tags %}
+
 {% block head_title %}{% trans "Creacion de Libro" %}{% endblock %}
 
 {% block h1_title %}{% trans "Nueva Libro" %}{% endblock %} 
@@ -11,8 +13,8 @@
 
         <form action="" method="POST">
             {% csrf_token %}
-            {{ form.as_p }}
-            <button>{% trans "Crear Libro" %}</button>
+            {{ form|crispy }}
+            <button class="btn btn-primary">{% trans "Crear Libro" %}</button>
         </form> 
 
 {% endblock %}

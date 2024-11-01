@@ -2,6 +2,8 @@
 
 {% load i18n %}
 
+{% load crispy_forms_tags %}
+
 {% block head_title %}{% trans "Detalle de Libros" %}{% endblock %}
 
 {% block h1_title %}{% trans "Detalle deLibros" %} {% endblock %} 
@@ -18,8 +20,12 @@
             <h2>{% trans " No se ha encontrado el libro que buscabas" %}</h2>
         {% endif %}
         {% if libros.created_by == request.user %}
-            <button> <a href={% url "libro:update"  libros.pk %}>{% trans "Editar Libro" %}</a></button>
-            <button> <a href={% url "libro:delete"  libros.pk %}>{% trans "Borrar Libro" %}</a></button>
+            <form action="" method="post">
+                {% csrf_token %}
+                {{ form|crispy }}
+                <button class="btn btn-info"> <a href={% url "libro:update"  libros.pk %}>{% trans "Editar Libro" %}</a></button>
+                <button class="btn btn-warning"> <a href={% url "libro:delete"  libros.pk %}>{% trans "Borrar Libro" %}</a></button>
+            </form>
         {% endif %}
         </article>
 

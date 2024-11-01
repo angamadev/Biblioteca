@@ -46,6 +46,9 @@ INSTALLED_APPS = [
     'rosetta',
     'modeltranslation',
     
+    'crispy_forms',
+    'crispy_bootstrap5',
+    
     'books',
 ]
 
@@ -174,4 +177,7 @@ INTERNAL_IPS = [
 LOGIN_URL = "user:login"
 LOGIN_REDIRECT_URL = "home"
 LOGOUT_REDIRECT_URL = "home"
+
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+CRISPY_TEMPLATE_PACK = "bootstrap5"
 
