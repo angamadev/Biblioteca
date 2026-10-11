@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
-from pdb import run
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -23,7 +23,7 @@ STATIC_DIR = BASE_DIR / "biblioteca" / "static"
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-+37h(ab+xxn)xwf5s5fn8x=eq-8!t^rskz6^v_3_a=7t2lqc*g'
+SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY", "django-insecure-solo-para-desarrollo-local")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True

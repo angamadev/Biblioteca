@@ -1,0 +1,12 @@
+
+# Entorno, secretos y datos locales
+.env
+*.sqlite3
+__pycache__/
+*.py[cod]
+.DS_Store
+aca_Env/
+envbiblio/
+env/
+venv/
+.venv/
